@@ -73,8 +73,7 @@ nav {
       font-family: 'GmarketSansMedium';
       border: none;
       border-radius: 10px;
-      background-color: $green;
-      color: white;
+      background-color: white;
       height: 35px;
       font-size: 15px;
       padding: 1px 15px;
@@ -82,7 +81,6 @@ nav {
 
       &:hover {
         color: rgb(162, 160, 160);
-        background-color: lighten($green, 5%);
       }
     }
   }

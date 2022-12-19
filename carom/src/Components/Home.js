@@ -37,6 +37,10 @@ function Home() {
         {clock}
       </div>
     </div>
+    <div>
+    <img src="https://cdn4.iconfinder.com/data/icons/sports-57/32/billiard-512.png"/>
+    </div>
+    <Notice/>
   </div>;
 }
 
