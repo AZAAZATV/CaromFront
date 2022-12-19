@@ -11,9 +11,10 @@ function Navigation() {
         <li><a href="http://www.danggubaksa.com/home/billiards-basic/billiard-rules/">당구규칙</a></li>
     </ul>
 
-    <ul className="navbar__icons">
-         <li><img width={'40px'} src="https://cdn1.iconfinder.com/data/icons/iconoir-vol-3/24/log-out-256.png"/></li>
-    </ul>
+    <div className="log-in">
+         <button>로그인</button>
+         <button>회원가입</button>
+    </div>
 
   </nav>);
 }
