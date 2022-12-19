@@ -37,6 +37,7 @@ function Home() {
         {clock}
       </div>
     </div>
+    <Notice />
   </div>;
 }
 
