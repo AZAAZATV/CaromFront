@@ -3,6 +3,7 @@ import Navigation from "./Components/Navigation";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import TermsOfUse from "./Components/TermsOfUse";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/Terms-of-use" element={<TermsOfUse />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
