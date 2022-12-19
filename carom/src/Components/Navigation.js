@@ -10,7 +10,7 @@ function Navigation() {
         <span><Link to="/home">Home</Link></span>
       </li>
       <li>
-        <span><Link to='/'>이용규정</Link></span>
+        <span><Link to='/Terms-of-use'>이용규정</Link></span>
       </li>
       <li>
         <span>신청목록</span>
