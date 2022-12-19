@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./Home.scss";
 import moment from 'moment';
 import 'moment/locale/ko';
+import Notice from "./Notice";
 
 function Home(){
     const [clock, setClock] = useState();
@@ -37,6 +38,11 @@ function Home(){
                 {clock}
             </div>
         </div>
+
+        <div className="img">
+            <img src="https://cdn4.iconfinder.com/data/icons/sports-57/32/billiard-256.png"></img>
+        </div>
+        <Notice/>
     </div>;
 }
 
