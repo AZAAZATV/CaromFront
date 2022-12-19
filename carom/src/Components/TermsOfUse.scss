@@ -3,5 +3,10 @@
 
   ol {
     margin: 250px;
+
+    li {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
   }
 }
