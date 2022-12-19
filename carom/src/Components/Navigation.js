@@ -2,7 +2,8 @@ import React from "react";
 import './Navigation.scss';
 
 function Navigation() {
-  return <nav className="Navigation">
+  return( <nav className="Navigation">
+    <h1>Carom</h1>
     <ul>
       <h1>Carom</h1>
       <li>
@@ -22,7 +23,13 @@ function Navigation() {
         <img width={'40px'} src="https://cdn4.iconfinder.com/data/icons/eon-ecommerce-i-1/32/user_profile_man-512.png" alt="user_icon" />
       </span>
     </ul>
-  </nav>;
+
+    <div className="log-in">
+         <button>로그인</button>
+         <button>회원가입</button>
+    </div>
+
+  </nav>);
 }
 
 export default Navigation;
