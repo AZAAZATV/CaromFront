@@ -13,7 +13,7 @@ function Navigation() {
         <span><Link to='/Terms-of-use'>이용규정</Link></span>
       </li>
       <li>
-        <span>신청목록</span>
+        <span><Link to='/UserList'>신청목록</Link></span>
       </li>
       <li>
         <span><a href="http://www.danggubaksa.com/home/billiards-basic/billiard-rules/" target={"_blank"} rel='noonpener noreferrer'>당구 규칙</a></span>
