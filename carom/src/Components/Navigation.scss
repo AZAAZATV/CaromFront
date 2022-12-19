@@ -38,32 +38,34 @@ nav{
     list-style: none;
     margin-left: 22%;
     margin-top: 30px;
-    li{
-      font-family: '양진체';
-      padding: 8px 30px;
-      font-size: 17.7px;
-      &:hover{
-        color: rgb(162, 160, 160);
-      }
-      a{
-        text-decoration-line: none;
-        color: black;
-        &:hover{
-          color: rgb(162, 160, 160);
-        }
-      }
+  }
+  li{
+    font-family: '양진체';
+    padding: 8px 30px;
+    font-size: 17.7px;
+    &:hover{
+      color: rgb(162, 160, 160);
+    }
+  }
+  a{
+    text-decoration-line: none;
+    color: black;
+    &:hover{
+      color: rgb(162, 160, 160);
     }
   }
   .log-in{
     position: absolute;
-    margin-top: 33px;
+    margin-top: 32px;
     right: 5%;
+
     button{
       font-family: 'GmarketSansMedium';
       border:none;   
       background-color: white;
       font-size: 15px;
       padding: 1px 15px;
+
       &:hover{
         color: rgb(162, 160, 160);
       }
