@@ -7,7 +7,8 @@ function Navigation() {
     <ul>
       <h1>Carom</h1>
       <li>
-        <img title="home" alt="home" /><span>home</span>
+        <img width={'40px'} height={'40px'} src="https://cdn4.iconfinder.com/data/icons/eon-ecommerce-i-1/32/home_house_desktop_dashboard-256.png" title="home" alt="home" />
+        <span>Home</span>
       </li>
       <li>
         <span>이용규정</span>
@@ -18,6 +19,9 @@ function Navigation() {
       <li>
         <span><a href="http://www.danggubaksa.com/home/billiards-basic/billiard-rules/" target={"_blank"} rel='noonpener noreferrer'>당구 규칙</a></span>
       </li>
+      <span id="user_icon">
+        <img width={'40px'} src="https://cdn4.iconfinder.com/data/icons/eon-ecommerce-i-1/32/user_profile_man-512.png" alt="user_icon" />
+      </span>
     </ul>
 
     <div className="log-in">
