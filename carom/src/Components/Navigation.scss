@@ -7,13 +7,23 @@ nav{
   border: 2px solid black;
   h1{
     margin-right: 100px;
+    margin-top: 15px;
+  }
+  #user_icon{
+    position: absolute;
+    margin-top: 10px;
+    right: 5%;
   }
   ul{
     display: flex;
     li{
-      margin-top: 24px;
+      display: flex;
+      margin-top: 19px;
       list-style: none;
       margin-right: 30px;
+      img{
+        margin-top: -10px;
+      }
       span{
         font-size: 20px;
         a{
