@@ -1,5 +1,4 @@
 .Home{
-    color:white;
     margin-top: 150px;
     h2{
         margin-top: 8px;
@@ -9,19 +8,17 @@
 }
 
 .join{
-    background-color: rgb(71, 17, 17);
     margin-left: 80px;
     border: 2px solid black;
     width: 400px;
     height: 500px;
     
     .oneteam{
-        background-color: #66bb6a;
-        margin-top: 15px;
-        margin-left: 13px;
-        width: 370px;
-        height: 220px;
-        border: 2px solid rgb(71, 17, 17);
+        margin-top: 30px;
+        margin-left: 33px;
+        width: 330px;
+        height: 200px;
+        border: 2px solid black;
         p{
             margin-left: 10px;
         }
@@ -42,12 +39,11 @@
     }
 
     .twoteam{
-        background-color: #66bb6a;;
-        margin-top: 15px;
-        margin-left: 13px;
-        width: 370px;
-        height: 220px;
-        border: 2px solid rgb(71, 17, 17);
+        margin-top: 20px;
+        margin-left: 33px;
+        width: 330px;
+        height: 200px;
+        border: 2px solid black;
         p{
             margin-left: 10px;
         }
@@ -70,13 +66,12 @@
 }
 
 .rule {
-    background-color: #66bb6a;
     position: absolute;
     top: 20%;
     left: 37%;
     width: 400px;
-    height: 220px;
-    border: 20px solid  rgb(71, 17, 17);
+    height: 240px;
+    border: 2px solid black;
     p {
         text-align: center;
         font-size: 20px;
