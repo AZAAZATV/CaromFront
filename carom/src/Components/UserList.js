@@ -8,9 +8,9 @@ function UserList() {
         <span>1</span>
         <div className="users">
           <div className="user"><span>사람1</span></div>
-          <div className="user"><span>사람1</span></div>
-          <div className="user"><span>사람1</span></div>
-          <div className="user"><span>사람1</span></div>
+          <div className="user"><span>사람2</span></div>
+          <div className="user"><span>사람3</span></div>
+          <div className="user"><span>사람4</span></div>
         </div>
       </div>
       <div className="list">
