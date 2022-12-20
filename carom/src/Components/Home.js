@@ -38,9 +38,9 @@ function Home() {
       </div>
     </div>
     <div>
-    <img src="https://cdn4.iconfinder.com/data/icons/sports-57/32/billiard-512.png"/>
+      <img src="https://cdn4.iconfinder.com/data/icons/sports-57/32/billiard-512.png" alt="carom" />
     </div>
-    <Notice/>
+    <Notice />
   </div>;
 }
 

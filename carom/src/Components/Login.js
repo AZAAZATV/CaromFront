@@ -5,19 +5,19 @@ function Login() {
     return <div className="Login">
         <div className="box">
             <div className="maintitle">
-            <p>Carom</p>
+                <p>Carom</p>
             </div>
 
             <div className="title">로그인을 해주세요!</div>
 
             <div className="log-in">
                 <input placeholder="아이디" />
-                <img className="phoneImage" src="image/login.png" />
+                <img className="phoneImage" src="image/login.png" alt="login" />
             </div>
 
             <div className="secrit">
                 <input placeholder="비밀번호" />
-                <img className="phoneImage2" src="image/secrit.png" />
+                <img className="phoneImage2" src="image/secrit.png" alt="secret" />
             </div>
 
             <div className="log-btn">
