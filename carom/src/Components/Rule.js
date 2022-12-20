@@ -107,7 +107,11 @@ function Rule() {
     <span>타임파울(정해진 시간 안에 치지 않은 파울)은 초구배치에서 시작한다.</span><br /><br />
     <span>고의적 파울 위에서 정의된 파울이 고의적으로 행해진 것이라면,
       자기 차례가 된 무고한 상대방은 만약 이 위치가 자신에게 더 유리하다고 생각되면
-      고의적 반칙이 발생하기 전에 공이 있었던 그 자리에 공을 재배치해 줄 것을 심판에게 요구할 수 있다.</span>
+      고의적 반칙이 발생하기 전에 공이 있었던 그 자리에 공을 재배치해 줄 것을 심판에게 요구할 수 있다.</span><br /><br />
+    <span>
+      참고자료 :
+      <a rel="noreferrer noopener" href="http://www.danggubaksa.com/wp-content/uploads/2021/01/carom_billiard_rules_kbf.pdf" target="_blank">대한당구연맹 규정집</a>
+    </span>
   </div >;
 }
 
