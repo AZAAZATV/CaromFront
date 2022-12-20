@@ -16,13 +16,20 @@ function Navigation() {
         <span><Link to='/UserList'>신청목록</Link></span>
       </li>
       <li>
-        <span><a href="http://www.danggubaksa.com/home/billiards-basic/billiard-rules/" target={"_blank"} rel='noonpener noreferrer'>당구 규칙</a></span>
+        <span>
+          {/* <a href="http://www.danggubaksa.com/home/billiards-basic/billiard-rules/" target={"_blank"} rel='noonpener noreferrer'>
+          </a> */}
+          <Link to='/Rule'>
+            당구 규칙
+          </Link>
+        </span>
       </li>
     </ul>
     
     <div className="log-in">
       <Link to='/login'>
         <button>로그인</button>
+        <button>회원가입</button>
       </Link>
       <Link to='/signup'>
       <button>회원가입</button>
