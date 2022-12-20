@@ -1,3 +1,35 @@
 .userlist {
-  margin: 250px;
+  margin: 200px 250px 0px 250px;
+  border: 1px solid black;
+  height: 400px;
+  display: flex;
+
+  .lists {
+    width: 100%;
+    display: flex;
+    margin: 20px;
+
+    .list {
+      display: block;
+      text-align: center;
+      width: 100%;
+      border: 1px solid black;
+
+      &+.list {
+        margin-left: 20px;
+      }
+
+      span {
+        position: relative;
+        top: 5%;
+        font-size: 20px;
+        font-family: '양진체';
+      }
+
+      .users {
+        margin-top: 20px;
+        height: 90%;
+      }
+    }
+  }
 }

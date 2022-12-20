@@ -3,7 +3,20 @@ import './UserList.scss';
 
 function UserList() {
   return <div className="userlist">
-    sksksk
+    <div className="lists">
+      <div className="list">
+        <span>1</span>
+        <div className="users">
+          <div className="user">asdf</div>
+        </div>
+      </div>
+      <div className="list">
+        <span>2</span>
+        <div className="users">
+          <div className='user'></div>
+        </div>
+      </div>
+    </div>
   </div>;
 }
 
