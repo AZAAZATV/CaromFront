@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'OKDDUNG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.sign-box {
+    border-radius: 3px;
+    box-shadow: 16px 16px 6px rgb(158, 157, 157);
+    margin-top: 130px;
+    margin-left: 33%;
+    width: 430px;
+    height: 570px;
+    border: 2px solid black;
+
+    .signup-title {
+        text-align: center;
+        font-size: 27px;
+        p {
+            font-family: 'OKDDUNG';
+        }
+    }
+
+    .email {
+        margin-left: 30px;
+
+        p{
+        font-weight: bold;
+        }
+
+        input {
+            border-color: rgb(183, 178, 178);
+            width: 24%;
+            position: absolute;
+            margin-top: -10px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+    }
+
+    .name {
+        margin-left: 30px;
+
+        p {
+            margin-top: 60px;
+            font-weight: bold;
+        }
+
+        input {
+            margin-top: -10px;
+            border-color: rgb(183, 178, 178);
+            width: 24%;
+            position: absolute;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+    }
+
+    .scritnum {
+        margin-left: 30px;
+
+        p {
+            margin-top: 60px;
+            font-weight: bold;
+        }
+
+        input {
+            margin-top: -10px;
+            border-color: rgb(183, 178, 178);
+            width: 24%;
+            position: absolute;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+    }
+
+    .classnum {
+        margin-left: 30px;
+
+        p {
+            margin-top: 60px;
+            font-weight: bold;
+        }
+
+        .class-input{
+
+            .input {
+                width: 125px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                outline: none;
+            }
+
+        }
+    }
+
+    .sign-btn {
+        margin-top: 60px;
+        margin-left: 16px;
+
+        button {
+            &:hover {
+                background-color: #25bb2c;
+            }
+            
+            color: white;
+            background-color: #66bb6a;
+            position: absolute;
+            width: 22%;
+            height: 45px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}

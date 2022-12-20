@@ -19,11 +19,14 @@ function Navigation() {
         <span><a href="http://www.danggubaksa.com/home/billiards-basic/billiard-rules/" target={"_blank"} rel='noonpener noreferrer'>당구 규칙</a></span>
       </li>
     </ul>
+    
     <div className="log-in">
       <Link to='/login'>
         <button>로그인</button>
       </Link>
+      <Link to='/signup'>
       <button>회원가입</button>
+      </Link>
     </div>
   </nav>;
 }
