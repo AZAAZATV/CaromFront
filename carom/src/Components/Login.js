@@ -26,12 +26,17 @@ function Login() {
             </div>
 
             <div className="make">
+                <div className="nosign">아직계정이 없으신가요?</div>
                 <Link to='/signup'>
-                <p>아직 계정이 없으신가요?</p>
-                <div className="make-log">
-                    <button className="join-btn">회원가입</button>
-                </div>
+                <p>계정만들기</p>
                 </Link>
+            </div>
+
+            <div className="write">
+                <p>예약하고</p>
+                <p>당구치러가자!</p>
+
+                <img className="phoneImage3" src="image/loginball.png" />
             </div>
 
             <div className="line">
