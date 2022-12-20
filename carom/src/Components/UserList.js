@@ -7,7 +7,7 @@ function UserList() {
       <div className="list">
         <span>1</span>
         <div className="users">
-          <div className="user">asdf</div>
+          <div className="user">사람1</div>
         </div>
       </div>
       <div className="list">
