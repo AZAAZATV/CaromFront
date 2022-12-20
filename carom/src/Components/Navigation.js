@@ -22,8 +22,8 @@ function Navigation() {
     <div className="log-in">
       <Link to='/login'>
         <button>로그인</button>
+        <button>회원가입</button>
       </Link>
-      <button>회원가입</button>
     </div>
   </nav>;
 }
