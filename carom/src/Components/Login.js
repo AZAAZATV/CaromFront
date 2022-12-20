@@ -1,5 +1,6 @@
 import React from "react";
 import './Login.scss';
+import {Link} from 'react-router-dom';
 
 function Login() {
     return <div className="Login">
@@ -25,11 +26,12 @@ function Login() {
             </div>
 
             <div className="make">
+                <Link to='/signup'>
                 <p>아직 계정이 없으신가요?</p>
-
                 <div className="make-log">
                     <button className="join-btn">회원가입</button>
                 </div>
+                </Link>
             </div>
 
             <div className="line">
