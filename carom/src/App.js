@@ -6,6 +6,7 @@ import TermsOfUse from "./Components/TermsOfUse";
 import NotFound from "./Components/NotFound";
 import UserList from "./Components/UserList";
 import Login from './Components/Login';
+import Rule from "./Components/Rule";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/Terms-of-use" element={<TermsOfUse />} />
+          <Route path="/Rule" element={<Rule />} />
           <Route path="/UserList" element={<UserList />} />
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
