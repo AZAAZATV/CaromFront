@@ -1,5 +1,4 @@
 $green :#66bb6a;
-
 @font-face {
   font-family: 'OKDDUNG';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2') format('woff2');
@@ -73,8 +72,7 @@ nav {
       font-family: 'GmarketSansMedium';
       border: none;
       border-radius: 10px;
-      background-color: $green;
-      color: white;
+      background-color: white;
       height: 35px;
       font-size: 15px;
       padding: 1px 15px;
@@ -83,7 +81,6 @@ nav {
 
       &:hover {
         color: rgb(162, 160, 160);
-        background-color: lighten($green, 5%);
       }
     }
   }
