@@ -20,7 +20,9 @@ function Navigation() {
       </li>
     </ul>
     <div className="log-in">
-      <button>로그인</button>
+      <Link to='/login'>
+        <button>로그인</button>
+      </Link>
       <button>회원가입</button>
     </div>
   </nav>;
