@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import './Signup.scss';
 
+
 function Signup() {
+    const [a, setA] = useState();
+    const [b, setB] = useState();
+    const [c, setC] = useState();
+
     return <div className="sign-up">
         
     <div className="sign-box">
@@ -33,22 +38,22 @@ function Signup() {
         <div className="classnum">
             <p>학번</p>
             <div className="class-input">
-                  <select className="input" placeholder="학년">
-                    <option value={-1}>학년</option>
-                    <option value={1}>1</option>
-                    <option value={2}>2</option>
-                    <option value={3}>3</option>
+                  <select id="class1" className="input" onChange={(e)=>setA(e.target.value)}>
+                    <option value={'-1'}>학년</option>
+                    <option value={'1'}>1</option>
+                    <option value={'2'}>2</option>
+                    <option value={'3'}>3</option>
                   </select>
                   
-                  <select className="input">
+                  <select id="class2" className="input" onChange={(e)=>setB(e.target.value)}>
                     <option value={-1}>반</option>
                     <option value={1}>1</option>
                     <option value={2}>2</option>
                     <option value={3}>3</option>
-                    <option value={3}>3</option>
+                    <option value={3}>4</option>
                   </select>
 
-                  <select className="input">
+                  <select id="class3" className="input" onChange={(e)=>setC(e.target.value)}>
                     <option value={-1}>번호</option>
                     <option value={1}>1</option>
                     <option value={2}>2</option>
@@ -68,14 +73,14 @@ function Signup() {
                     <option value={16}>16</option>
                     <option value={17}>17</option>
                     <option value={18}>18</option>
-                    <option value={19}>19</option>
+                    <option value={19}>19</option>  
                     <option value={20}>20</option>
 
                   </select>
             </div>
 
             <div className="sign-btn">
-                <button>회원가입</button>
+                <button onClick={()=>alert(a+'-'+ b+ '-'+ c)}>회원가입</button>
             </div>
         </div>
 
