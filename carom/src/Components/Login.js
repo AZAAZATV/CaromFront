@@ -16,7 +16,7 @@ function Login() {
             </div>
 
             <div className="secrit">
-                <input placeholder="비밀번호" />
+                <input placeholder="비밀번호" type={'password'} />
                 <img className="phoneImage2" src="image/secrit.png" alt="secret" />
             </div>
 
