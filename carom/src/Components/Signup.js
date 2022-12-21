@@ -8,7 +8,8 @@ function Signup() {
     const [c, setC] = useState();
 
     return <div className="sign-up">
-        
+
+    <div className="inputfont">    
     <div className="sign-box">
         <div className="signup-title">
             <p>Carom</p>
@@ -50,7 +51,7 @@ function Signup() {
                     <option value={1}>1</option>
                     <option value={2}>2</option>
                     <option value={3}>3</option>
-                    <option value={3}>4</option>
+                    <option value={4}>4</option>
                   </select>
 
                   <select id="class3" className="input" onChange={(e)=>setC(e.target.value)}>
@@ -77,7 +78,9 @@ function Signup() {
                     <option value={20}>20</option>
 
                   </select>
+                  </div>
             </div>
+            
 
             <div className="sign-btn">
                 <button onClick={()=>alert(a+'-'+ b+ '-'+ c)}>회원가입</button>
