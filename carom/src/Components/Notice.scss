@@ -6,6 +6,7 @@
   background-color: rgb(71, 17, 17);
   width: 400px;
   height: 464px;
+  box-shadow: 16px 16px 6px rgb(158, 157, 157);
   position: fixed;
 
   div {
@@ -15,6 +16,8 @@
     background-color: #66bb6b;
 
     h2 {
+      position: relative;
+      top: 10px;
       text-align: center;
       margin-top: 30px;
     }
