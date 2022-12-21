@@ -32,9 +32,11 @@ function Home() {
     </div>
 
     <div className="rule">
-      <p>현재시간!</p>
-      <div className="now">
-        {clock}
+      <div>
+        <p>현재시간!</p>
+        <div className="now">
+          {clock}
+        </div>
       </div>
     </div>
     <div>

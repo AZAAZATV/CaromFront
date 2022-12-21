@@ -3,7 +3,9 @@ import './Notice.scss';
 
 function Notice() {
     return <div className="Notice">
-        <h2>공지사항</h2>
+        <div>
+            <h2>공지사항</h2>
+        </div>
     </div>;
 }
 
