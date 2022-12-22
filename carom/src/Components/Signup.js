@@ -7,6 +7,8 @@ function Signup() {
   const [b, setB] = useState(-1);
   const [c, setC] = useState(-1);
 
+  const [password, setPassword] = useState();
+
   return <div className="sign-up">
     <form className="sign-box" onSubmit={(e) => { e.preventDefault() }}>
       <div className="signup-title">
@@ -25,7 +27,13 @@ function Signup() {
 
       <div className="password">
         <p>비밀번호</p>
-        <input />
+        <input type='text' maxLength={10} onChange={(e) => {
+          const E = /[^0-9]/g;
+          if (E.test(e.target.value)) {
+            e.target.value = e.target.value.replace(E, '');
+          }
+          setPassword(parseInt(e.target.value));
+        }} value={password} />
       </div>
 
       <div className="classnum">
