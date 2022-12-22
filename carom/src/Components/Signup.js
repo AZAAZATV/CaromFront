@@ -23,7 +23,7 @@ function Signup() {
         <input />
       </div>
 
-      <div className="scritnum">
+      <div className="password">
         <p>비밀번호</p>
         <input />
       </div>
