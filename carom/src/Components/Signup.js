@@ -8,18 +8,18 @@ function Signup() {
   const [c, setC] = useState(-1);
 
   return <div className="sign-up">
-    <div className="sign-box">
+    <form className="sign-box" onSubmit={(e) => { e.preventDefault() }}>
       <div className="signup-title">
         <p>Carom</p>
       </div>
 
-      <div className="email">
-        <p>이메일</p>
+      <div className="name">
+        <p>이름</p>
         <input />
       </div>
 
-      <div className="name">
-        <p>이름</p>
+      <div className="Id">
+        <p>아이디</p>
         <input />
       </div>
 
@@ -73,7 +73,7 @@ function Signup() {
           <button onClick={() => alert(a + '-' + b + '-' + c)}>회원가입</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 }
 
