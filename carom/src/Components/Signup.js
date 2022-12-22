@@ -17,8 +17,8 @@ function Signup() {
 
       <div className="name">
         <p>이름</p>
-        <input type='text' maxLength={10} onChange={(e) => {
-          const E = /[^a-zA-Z]/g;
+        <input type='text' maxLength={10} onKeyUp={(e) => {
+          const E = /[^가-힣]/g;
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
