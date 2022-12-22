@@ -1,0 +1,21 @@
+.Rule {
+  margin: 200px;
+  width: 800px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+
+  .iframe {
+    display: inline-block;
+
+    iframe {
+      width: 800px;
+      height: 500px;
+    }
+  }
+
+  img {
+    width: 100%;
+    position: static;
+    margin: 0px;
+  }
+}

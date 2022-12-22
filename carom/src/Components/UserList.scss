@@ -1,3 +1,57 @@
+$green :#66bb6a;
+$wood : rgb(71, 17, 17);
+
 .userlist {
-  margin: 250px;
+  margin: 200px 20% 0 20%;
+  height: 400px;
+  display: flex;
+  font-family: 'GmarketSansMedium';
+  border-radius: 20px;
+  background-color: $wood;
+  box-shadow: 16px 16px 6px rgb(158, 157, 157);
+
+  .lists {
+    width: 100%;
+    display: flex;
+    margin: 20px;
+
+    .list {
+      display: block;
+      text-align: center;
+      width: 100%;
+      border-radius: 20px;
+      background-color: $green;
+
+      &+.list {
+        margin-left: 20px;
+      }
+
+      span {
+        position: relative;
+        top: 5%;
+        font-size: 20px;
+        font-family: '양진체';
+        color: #FDFDFD;
+      }
+
+      .users {
+        margin-top: 35px;
+        height: 80%;
+
+        .user {
+          background-color: #FDFDFD;
+          margin: 0px auto 30px;
+          font-size: 30px;
+          height: 45px;
+          width: 90%;
+          border-radius: 30px;
+
+          span {
+            font-family: 'GmarketSansMedium';
+            color: black;
+          }
+        }
+      }
+    }
+  }
 }

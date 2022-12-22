@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import moment from 'moment';
 import 'moment/locale/ko';
-import Notice from "./Notice";
 
 function Home() {
   const [clock, setClock] = useState();
@@ -13,29 +12,47 @@ function Home() {
     return (() => clearInterval(id));
   }, []);
   return <div className="Home">
-    <div className="join">
-      <div className="oneteam">
-        <p>1팀</p>
-        <div className="onepeople">
-          0/4
+    <div className="main">
+
+      <div className="clockbox">
+        <div className="clock">
+          {clock}
         </div>
-        <button>신청하기</button>
       </div>
 
-      <div className="twoteam">
-        <p>2팀</p>
-        <div className="twopeople">
-          0/4
-        </div>
-        <button>신청하기</button>
-      </div>
-    </div>
+      <div className="alert">
+        <h2>공지사항</h2>
 
-    <div className="rule">
-      <p>현재시간!</p>
-      <div className="now">
-        {clock}
+        <div className="alertbox">
+          ??
+        </div>
       </div>
+
+      <div className="apply">
+        <h2>당구신청</h2>
+
+        <div className="applybox1">
+          <p>1팀</p>
+          <h2>0/4</h2>
+          <button>신청하기</button>
+        </div>
+
+        <div className="applybox2">
+          <p>2팀</p>
+          <h2>0/4</h2>
+          <button>신청하기</button>
+        </div>
+
+        <div className="rulebox">
+          <h2>이용규정</h2>
+          <div className="rulebox2">
+            ??
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
   </div>;
 }

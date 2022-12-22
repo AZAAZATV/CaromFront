@@ -1,4 +1,4 @@
-$green :#0da2a5;
+$green :#66bb6a;
 
 @font-face {
   font-family: 'OKDDUNG';
@@ -70,19 +70,25 @@ nav {
     right: 5%;
 
     button {
+      background-color: $green;
       font-family: 'GmarketSansMedium';
       border: none;
       border-radius: 10px;
-      background-color: $green;
       color: white;
       height: 35px;
       font-size: 15px;
       padding: 1px 15px;
       margin-right: 20px;
+      margin-top: -10px;
 
       &:hover {
+        background-color: darken($green, 5%);
         color: rgb(162, 160, 160);
+      }
+
+      &:active {
         background-color: lighten($green, 5%);
+        color: white;
       }
     }
   }
