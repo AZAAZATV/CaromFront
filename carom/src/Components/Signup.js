@@ -17,12 +17,22 @@ function Signup() {
 
       <div className="name">
         <p>이름</p>
-        <input />
+        <input type='text' maxLength={10} onChange={(e) => {
+          const E = /[^a-zA-Z]/g;
+          if (E.test(e.target.value)) {
+            e.target.value = e.target.value.replace(E, '');
+          }
+        }} />
       </div>
 
       <div className="Id">
         <p>아이디</p>
-        <input />
+        <input type='text' maxLength={10} onChange={(e) => {
+          const E = /[^a-zA-Z]/g;
+          if (E.test(e.target.value)) {
+            e.target.value = e.target.value.replace(E, '');
+          }
+        }} />
       </div>
 
       <div className="password">
