@@ -15,14 +15,14 @@ function Home() {
     <div className="main">
 
       <div className="clockbox">
-          <div className="clock">
-              {clock}
-          </div>
+        <div className="clock">
+          {clock}
+        </div>
       </div>
 
       <div className="alert">
         <h2>공지사항</h2>
-        
+
         <div className="alertbox">
           ??
         </div>
@@ -32,15 +32,15 @@ function Home() {
         <h2>당구신청</h2>
 
         <div className="applybox1">
-              <p>1팀</p>
-              <h2>0/4</h2>
-              <button>신청하기</button>
+          <p>1팀</p>
+          <h2>0/4</h2>
+          <button>신청하기</button>
         </div>
 
         <div className="applybox2">
-              <p>2팀</p>
-              <h2>0/4</h2>
-              <button>신청하기</button>
+          <p>2팀</p>
+          <h2>0/4</h2>
+          <button>신청하기</button>
         </div>
 
         <div className="rulebox">
