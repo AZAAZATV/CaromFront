@@ -1,25 +1,26 @@
 @font-face {
-    font-family: 'OKDDUNG';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'OKDDUNG';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'KOTRAHOPE';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'KOTRAHOPE';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Humanbumsuk';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Humanbumsuk';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.sign-box {
+.sign-up {
+  .sign-box {
     border-radius: 3px;
     box-shadow: 16px 16px 6px rgb(158, 157, 157);
     margin-top: 130px;
@@ -29,145 +30,84 @@
     border: 2px solid black;
 
     .signup-title {
-        text-align: center;
-        font-size: 27px;
+      text-align: center;
+      font-size: 27px;
 
-        p {
-            font-family: 'OKDDUNG';
-        }
+      p {
+        font-family: 'OKDDUNG';
+      }
     }
 
-    .email {
-        margin-left: 30px;
+    p {
+      font-weight: bold;
+    }
 
-        p {
-            font-weight: bold;
-        }
+    .Id {
+      margin-left: 30px;
 
-        input {
-            border-color: rgb(183, 178, 178);
-            width: 24%;
-            position: absolute;
-            margin-top: -10px;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            outline: none;
-        }
+      input {
+        border-color: rgb(183, 178, 178);
+        width: 88%;
+        margin-top: -10px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+      }
     }
 
     .name {
-        margin-left: 30px;
+      margin-left: 30px;
 
-        input {
-            font-size: 18px;
-            border-color: rgb(183, 178, 178);
-            width: 24%;
-            font-family: 'Humanbumsuk';
-            position: absolute;
-            margin-top: -10px;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            outline: none;
+      input {
+        border-color: rgb(183, 178, 178);
+        width: 88%;
+        margin-top: -10px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+      }
+    }
+
+    .password {
+      margin-left: 30px;
+
+      input {
+        margin-top: -10px;
+        border-color: rgb(183, 178, 178);
+        width: 88%;
+        position: relative;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+      }
+    }
+
+    .classnum {
+      margin: 50px 30px;
+
+      .class-input {
+        select {
+          width: 120px;
+          font-size: 15px;
+          font-family: 'Humanbumsuk';
+          font-weight: 600;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          outline: none;
         }
+      }
     }
 
-    input {
-        margin-top: -10px;
-        border-color: rgb(183, 178, 178);
-        width: 24%;
-        position: absolute;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-    }
-}
+    .sign-btn {
+      margin: 60px;
 
-.scritnum {
-    margin-left: 30px;
-
-    input {
-        font-size: 18px;
-        font-family: 'Humanbumsuk';
-        margin-top: -10px;
-        border-color: rgb(183, 178, 178);
-        width: 24%;
-        position: absolute;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-    }
-
-
-    input {
-        margin-top: -10px;
-        border-color: rgb(183, 178, 178);
-        width: 24%;
-        position: absolute;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-    }
-}
-
-.classnum {
-    margin-left: 30px;
-
-    input {
-        font-size: 18px;
-        font-family: 'Humanbumsuk';
-        margin-top: -10px;
-        border-color: rgb(183, 178, 178);
-        width: 24%;
-        position: absolute;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-    }
-
-
-    .class-input {
-
-        .input {
-            width: 125px;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            outline: none;
-        }
-
-        .class-input {
-
-            .input {
-                width: 125px;
-                border-top: none;
-                border-left: none;
-                border-right: none;
-                outline: none;
-            }
-
-            select {
-                font-size: 15px;
-                font-family: 'Humanbumsuk';
-                font-weight: 600;
-            }
-
-        }
-    }
-}
-
-.sign-btn {
-    margin-top: 60px;
-    margin-left: 45px;
-
-    button {
+      button {
         &:hover {
-            background-color: #25bb2c;
+          background-color: #25bb2c;
         }
 
         font-size: 17px;
@@ -179,20 +119,7 @@
         height: 45px;
         border: none;
         border-radius: 15px;
+      }
     }
-}
-
-.font {
-    p {
-        font-family: 'KOTRAHOPE';
-        font-weight: 100;
-        font-size: 19px;
-    }
-}
-
-.inputfont {
-    input {
-        font-family: 'Humanbumsuk';
-    }
-
+  }
 }
