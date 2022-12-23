@@ -17,8 +17,8 @@ function Signup() {
 
       <div className="name">
         <p>이름</p>
-        <input type='text' maxLength={10} onKeyUp={(e) => {
-          const E = /[^가-힣]/g;
+        <input type='text' maxLength={10} onChange={(e) => {
+          const E = /[^ㄱ-ㅎ가-힣]/g;
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
@@ -42,7 +42,7 @@ function Signup() {
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
-          setPassword(parseInt(e.target.value));
+          setPassword(e.target.value);
         }} value={password} />
       </div>
 
@@ -88,7 +88,13 @@ function Signup() {
           </select>
         </div>
         <div className="sign-btn">
-          <button onClick={() => alert(a + '-' + b + '-' + c)}>회원가입</button>
+          <button onClick={() => {
+            if (a !== -1 && b !== -1 && c !== -1) {
+              alert(a + '-' + b + '-' + c);
+            } else {
+              alert("제대로 입력하세요.");
+            }
+          }}>회원가입</button>
         </div>
       </div>
     </form>
