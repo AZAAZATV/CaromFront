@@ -15,7 +15,7 @@ function Home() {
     }, 1);
     return (() => clearInterval(id));
   }, []);
-  useEffect(() => {
+  useEffect(() => {//유저 정보 가지고 올거임.
 
   }, []);
   return <div className="Home">
@@ -39,25 +39,21 @@ function Home() {
         <div className="applybox1">
           <p>1팀</p>
           <h2>0/4</h2>
-          {!can1 ? (!sub1 ? <button onClick={() => setSub1(true)}>신청하기</button> : <button onClick={() => setCan1(true)}>신청취소</button>) : <button>신청 불가</button>}
+          {!can1 ? (!sub1 ? <button onClick={() => { setSub1(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan1(true); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
         </div>
 
         <div className="applybox2">
           <p>2팀</p>
           <h2>0/4</h2>
-          {!can2 ? (!sub2 ? <button onClick={() => setSub2(true)}>신청하기</button> : <button onClick={() => setCan2(true)}>신청취소</button>) : <button>신청 불가</button>}
+          {!can2 ? (!sub2 ? <button onClick={() => { setSub2(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan2(true); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
         </div>
-
-        <div className="rulebox">
-          <h2>이용규정</h2>
-          <div className="rulebox2">
-            ??
-          </div>
-        </div>
-
       </div>
-
-
+      <div className="rulebox">
+        <h2>이용규정</h2>
+        <div className="rulebox2">
+          ??
+        </div>
+      </div>
     </div>
   </div>;
 }
