@@ -5,11 +5,11 @@
   font-style: normal;
 }
 
-  @font-face {
-    font-family: 'PyeongChangPeace-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
 }
 
 .Login {
@@ -23,132 +23,138 @@
     margin-top: 10%;
     border-radius: 10px;
 
-        .maintitle{
-            p {
-                font-size: 27px;
-                margin-left: 2%;
-                position: absolute;
-                font-family: 'OKDDUNG';
-            }
+    .maintitle {
+      p {
+        font-size: 27px;
+        margin-left: 2%;
+        position: absolute;
+        font-family: 'OKDDUNG';
+      }
+    }
+
+    .line {
+      margin: 0;
+      padding: 0;
+      margin-left: 50%;
+      border-left: 3px solid rgb(97, 94, 94);
+      height: 100%;
+    }
+
+    .title {
+      font-family: 'GmarketSansMedium';
+      position: absolute;
+      margin-top: 75px;
+      margin-left: 2%;
+      font-size: 14px;
+      color: rgb(169, 161, 161);
+    }
+
+    .log-in {
+      position: absolute;
+      margin-top: 130px;
+      margin-left: 30px;
+
+      input {
+        font-family: 'GmarketSansMedium';
+        width: 290px;
+        height: 30px;
+        border-radius: 5px;
+        border-color: rgb(169, 161, 161);
+      }
+
+      .phoneImage {
+
+        margin-left: -14%;
+        margin-top: 5px;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+
+    .secrit {
+      position: absolute;
+      margin-top: 190px;
+      margin-left: 30px;
+
+      input {
+        font-family: 'GmarketSansMedium';
+        width: 290px;
+        height: 30px;
+        border-radius: 5px;
+        border-color: rgb(191, 183, 183);
+      }
+
+      .phoneImage2 {
+
+        margin-left: -14%;
+        margin-top: 5px;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .log-btn {
+      position: absolute;
+      margin-top: 18%;
+      margin-left: 30px;
+
+      .btn {
+        &:hover {
+          background-color: rgb(120, 216, 120);
         }
 
-        .line {
-            margin: 0;
-            padding: 0;
-            margin-left: 50%;
-            border-left : 3px solid rgb(97, 94, 94);
-            height : 100%;
-        }
+        font-family: 'GmarketSansMedium';
+        background-color: rgb(58, 182, 58);
+        width: 300px;
+        height: 38px;
+        border-radius: 5px;
+        border: none;
+      }
+    }
 
-        .title {
-            font-family: 'GmarketSansMedium';
-            position: absolute;
-            margin-top: 75px;
-            margin-left: 2%;
-            font-size: 14px;
-            color: rgb(169, 161, 161);
-        }
+    .make {
 
-        .log-in {
-            position: absolute;
-            margin-top: 130px;
-            margin-left: 30px;
-            input {
-                font-family: 'GmarketSansMedium';
-                width: 290px;
-                height: 30px;
-                border-radius: 5px;
-                border-color: rgb(169, 161, 161);
-            }
-            .phoneImage {
-                
-                margin-left: -14%;
-                margin-top: 5px;
-                position: absolute;
-                width: 25px;
-                height: 25px;
-            }
-        }
+      .nosign {
+        font-family: 'GmarketSansMedium';
+        color: rgb(74, 71, 71);
+      }
+
+      font-size: 14px;
+      position: absolute;
+      display: flex;
+      margin-top: 24%;
+      margin-left: 60px;
+
+      p {
+        margin-left: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
 
 
-        .secrit {
-            position: absolute;
-            margin-top: 190px;
-            margin-left: 30px;
+    }
 
-            input {
-                font-family: 'GmarketSansMedium';
-                width: 290px;
-                height: 30px;
-                border-radius: 5px;
-                border-color: rgb(191, 183, 183);
-            }
+    .write {
+      position: absolute;
+      margin-left: 27%;
 
-            .phoneImage2 {
-                
-                margin-left: -14%;
-                margin-top: 5px;
-                position: absolute;
-                width: 25px;
-                height: 25px;
-            }
-        }
+      p {
+        font-family: 'PyeongChangPeace-Bold';
+        font-size: 25px;
+      }
 
-        .log-btn {
-            position: absolute;
-            margin-top: 18%;
-            margin-left: 30px;
-            
-            .btn {
-                &:hover {
-                    background-color: rgb(120, 216, 120);
-                }
-                font-family: 'GmarketSansMedium';
-                background-color: rgb(58, 182, 58);
-                width: 300px;
-                height: 38px;
-                border-radius: 5px;
-                border: none;
-            }
-        }
+      .phoneImage3 {
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 20px;
+        width: 300px;
+        height: 200px;
+      }
+    }
 
-       .make {
-
-            .nosign {
-                font-family: 'GmarketSansMedium';
-                color:  rgb(74, 71, 71);
-            }
-
-            font-size: 14px;
-            position: absolute;
-            display: flex;
-            margin-top: 24%;
-            margin-left: 60px;
-
-            p {
-                margin-left: 10px;
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-            
-       }
-       .write {
-            position: absolute;
-            margin-left: 27%;
-            p {
-                    font-family: 'PyeongChangPeace-Bold';
-                    font-size: 25px;
-            }
-
-            .phoneImage3 {
-                position: absolute;
-                margin-top: 50px;
-                margin-left: 30px;
-                width: 260px;
-                height: 200px;
-            }
-        }
     .maintitle {
       p {
         font-size: 27px;
@@ -225,7 +231,7 @@
       .btn {
         color: white;
       }
-      
+
       position: absolute;
       margin-top: 18%;
       margin-left: 30px;
