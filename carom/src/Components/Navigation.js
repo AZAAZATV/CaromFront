@@ -4,7 +4,9 @@ import './Navigation.scss';
 
 function Navigation() {
   return <nav className="Navigation">
-    <h1>Carom</h1>
+    <Link to='/home'>
+      <h1>Carom</h1>
+    </Link>
     <ul>
       <li>
         <span><Link to="/home">Home</Link></span>
