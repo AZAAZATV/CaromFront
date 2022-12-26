@@ -12,7 +12,13 @@ function Signup() {
   const [password, setPassword] = useState();
   const post = () => {
     try {
-      document.location.href = `http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`;
+      axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`, {
+        ID: id,
+        PASSWORD: password,
+        NAME: name,
+        CLASS: a + '-' + b + '-' + c
+      }, { withCredentials: true }).then(() => alert("회원가입이 완료 되었습니다."));
+      document.location.href = '/login';
     } catch (e) {
       console.log(e);
     }
@@ -102,8 +108,7 @@ function Signup() {
         </div>
         <div className="sign-btn">
           <button onClick={() => {
-            if (a !== -1 && b !== -1 && c !== -1) {
-              alert(id + name + password + a + '-' + b + '-' + c);
+            if (id && name && password && a !== -1 && b !== -1 && c !== -1) {
               post();
             } else {
               alert("값을 정확하게 입력해 주십시오.");
