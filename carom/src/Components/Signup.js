@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import './Signup.scss';
-
+import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [a, setA] = useState(-1);
   const [b, setB] = useState(-1);
   const [c, setC] = useState(-1);
 
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState();
-
+  const post = async () => {
+  }
   return <div className="sign-up">
     <form className="sign-box" onSubmit={(e) => { e.preventDefault() }}>
       <div className="signup-title">
@@ -17,22 +21,27 @@ function Signup() {
 
       <div className="name">
         <p>이름</p>
-        <input type='text' maxLength={10} onKeyUp={(e) => {
-          const E = /[^가-힣]/g;
+        <input type='text' maxLength={10} onChange={(e) => {
+          const E = /[^ㄱ-ㅎ가-힣]/g;
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
-        }} />
+          setName(e.target.value);
+        }} placeholder='10자 이내 한글입력' />
       </div>
 
       <div className="Id">
         <p>아이디</p>
-        <input type='text' maxLength={10} onChange={(e) => {
-          const E = /[^a-zA-Z]/g;
-          if (E.test(e.target.value)) {
-            e.target.value = e.target.value.replace(E, '');
-          }
-        }} />
+        <div>
+          <input type='text' maxLength={10} onChange={(e) => {
+            const E = /[^a-zA-Z]/g;
+            if (E.test(e.target.value)) {
+              e.target.value = e.target.value.replace(E, '');
+            }
+            setId(e.target.value);
+          }} placeholder='10자 이내 영문입력' />
+          <button>아이디중복확인</button>
+        </div>
       </div>
 
       <div className="password">
@@ -42,8 +51,8 @@ function Signup() {
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
-          setPassword(parseInt(e.target.value));
-        }} value={password} />
+          setPassword(e.target.value);
+        }} value={password} placeholder='10자 이내 숫자 입력' />
       </div>
 
       <div className="classnum">
@@ -88,7 +97,14 @@ function Signup() {
           </select>
         </div>
         <div className="sign-btn">
-          <button onClick={() => alert(a + '-' + b + '-' + c)}>회원가입</button>
+          <button onClick={() => {
+            if (a !== -1 && b !== -1 && c !== -1) {
+              alert(id + name + password + a + '-' + b + '-' + c);
+              document.location.href = `http://10.82.18.67:8080/api/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`;
+            } else {
+              alert("값을 정확하게 입력해 주십시오.");
+            }
+          }}>회원가입</button>
         </div>
       </div>
     </form>
