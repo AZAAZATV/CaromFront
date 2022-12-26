@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Signup.scss';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [a, setA] = useState(-1);
@@ -10,14 +11,7 @@ function Signup() {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState();
-  function post() {
-    try {
-      const { data } = axios.post(`http://10.82.18.67:8080/api/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`);
-      // const { get } = axios.get('https://my-json-server.typicode.com/zofqofhtltm8015/fs/user');
-      // console.log(get.data);
-    } catch (e) {
-      console.log(e);
-    }
+  const post = async () => {
   }
   return <div className="sign-up">
     <form className="sign-box" onSubmit={(e) => { e.preventDefault() }}>
@@ -31,8 +25,8 @@ function Signup() {
           const E = /[^ㄱ-ㅎ가-힣]/g;
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
-            setName(e.target.value);
           }
+          setName(e.target.value);
         }} placeholder='10자 이내 한글입력' />
       </div>
 
@@ -43,8 +37,8 @@ function Signup() {
             const E = /[^a-zA-Z]/g;
             if (E.test(e.target.value)) {
               e.target.value = e.target.value.replace(E, '');
-              setId(e.target.value);
             }
+            setId(e.target.value);
           }} placeholder='10자 이내 영문입력' />
           <button>아이디중복확인</button>
         </div>
@@ -105,8 +99,8 @@ function Signup() {
         <div className="sign-btn">
           <button onClick={() => {
             if (a !== -1 && b !== -1 && c !== -1) {
-              alert(a + '-' + b + '-' + c);
-              post();
+              alert(id + name + password + a + '-' + b + '-' + c);
+              document.location.href = `http://10.82.18.67:8080/api/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`;
             } else {
               alert("값을 정확하게 입력해 주십시오.");
             }
