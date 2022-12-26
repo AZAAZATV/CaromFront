@@ -44,7 +44,7 @@ function Signup() {
             }
             setId(e.target.value);
           }} placeholder='10자 이내 영문입력' />
-          <button>아이디중복확인</button>
+          <button>중복확인</button>
         </div>
       </div>
 
