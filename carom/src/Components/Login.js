@@ -1,6 +1,8 @@
 import React from "react";
 import './Login.scss';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import mysql from 'mysql';
 
 function Login() {
   return <div className="Login">
@@ -28,7 +30,17 @@ function Login() {
         <img className="phoneImage2" src="image/secrit.png" alt="secret" />
       </div>
       <div className="log-btn">
-        <button className="btn">로그인</button>
+        <button className="btn" onClick={() => {
+          const conn = mysql.createConnection({
+            host: '10.82.18.67',
+            user: 'root',
+            password: '23456789',
+            port: '8080',
+            database: 'azaaztv'
+          });
+          conn.connect();
+          axios.get(`http://10.82.18.67:8080/signup/`, (res) => console.log(res));
+        }}>로그인</button>
       </div>
       <div className="make">
         <div className="nosign">아직계정이 없으신가요?</div>
@@ -39,7 +51,7 @@ function Login() {
       <div className="write">
         <p>예약하고</p>
         <p>당구치러가자!</p>
-        <img className="phoneImage3" src="image/loginball.png" alt="" />
+        <img className="phoneImage3" src="image/loginball.png" alt="loginimage" />
       </div>
       <div className="line" />
     </div>

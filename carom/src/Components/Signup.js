@@ -10,10 +10,19 @@ function Signup() {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState();
+  const [checked, setChecked] = useState(false);
   const signup = () => {
     try {
-      axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`, {}, { withCredentials: true }).then(() => alert("회원가입이 완료 되었습니다."))
+      axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`, {}, { withCredentials: true })
+        .then(() => alert("회원가입이 완료 되었습니다."))
         .then(() => document.location.href = '/login');
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  const checkId = () => {
+    try {
+
     } catch (e) {
       console.log(e);
     }
@@ -43,9 +52,12 @@ function Signup() {
             if (E.test(e.target.value)) {
               e.target.value = e.target.value.replace(E, '');
             }
+            setChecked(false);
             setId(e.target.value);
           }} placeholder='10자 이내 영문입력' />
-          <button>중복확인</button>
+          <button onClick={() => {
+
+          }}>중복확인</button>
         </div>
       </div>
 
@@ -103,7 +115,7 @@ function Signup() {
         </div>
         <div className="sign-btn">
           <button onClick={() => {
-            if (id && name && password && a !== -1 && b !== -1 && c !== -1) {
+            if (!checked && id && name && password && a !== -1 && b !== -1 && c !== -1) {
               signup();
             } else {
               alert("값을 정확하게 입력해 주십시오.");

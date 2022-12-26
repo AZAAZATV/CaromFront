@@ -16,7 +16,11 @@ function Home() {
     return (() => clearInterval(id));
   }, []);
   useEffect(() => {//유저 정보 가지고 올거임.
+    try {
 
+    } catch (e) {
+      console.log(e);
+    }
   }, []);
   return <div className="Home">
     <div className="main">
@@ -25,7 +29,6 @@ function Home() {
           {clock}
         </div>
       </div>
-
       <div className="alert">
         <h2>공지사항</h2>
         <div className="alertbox">
