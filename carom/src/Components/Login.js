@@ -42,7 +42,7 @@ function Login() {
       <div className="write">
         <p>예약하고</p>
         <p>당구치러가자!</p>
-        <img className="phoneImage3" src="image/loginball.png" alt="loginimage" />
+        <img className="phoneImage3" src="image/당구로고.png" alt="loginimage" />
       </div>
       <div className="line" />
     </div>
