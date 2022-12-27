@@ -32,7 +32,8 @@ function Home() {
       <div className="alert">
         <h2>공지사항</h2>
         <div className="alertbox">
-          테스트 기간
+          테스트 기간입니다. <br></br>
+          잘 만들어 봅시다.
         </div>
       </div>
 
