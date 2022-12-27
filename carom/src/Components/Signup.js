@@ -13,11 +13,12 @@ function Signup() {
   const [checked, setChecked] = useState(false);
   const signup = () => {
     try {
-      axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`, {}, { withCredentials: true })
-        .then(() => alert("회원가입이 완료 되었습니다."))
-        .then(() => document.location.href = '/login');
+      const { data } = axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`);
+      alert("회원가입이 완료 되었습니다.");
+      console.log(data);
+      // document.location.href = '/login';
     } catch (e) {
-      console.log(e);
+      console.log(e.response);
     }
   }
   const checkId = () => {

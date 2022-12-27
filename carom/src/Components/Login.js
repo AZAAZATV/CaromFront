@@ -30,7 +30,7 @@ function Login() {
       </div>
       <div className="log-btn">
         <button className="btn" onClick={() => {
-
+          axios.get(`http://10.82.18.67:8080/signup`)
         }}>로그인</button>
       </div>
       <div className="make">
