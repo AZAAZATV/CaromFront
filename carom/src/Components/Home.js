@@ -16,7 +16,11 @@ function Home() {
     return (() => clearInterval(id));
   }, []);
   useEffect(() => {//유저 정보 가지고 올거임.
+    try {
 
+    } catch (e) {
+      console.log(e);
+    }
   }, []);
   return <div className="Home">
     <div className="main">
@@ -25,23 +29,20 @@ function Home() {
           {clock}
         </div>
       </div>
-
       <div className="alert">
         <h2>공지사항</h2>
         <div className="alertbox">
-          ??
+          테스트 기간
         </div>
       </div>
 
       <div className="apply">
         <h2>당구신청</h2>
-
         <div className="applybox1">
           <p>1팀</p>
           <h2>0/4</h2>
           {!can1 ? (!sub1 ? <button onClick={() => { setSub1(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan1(true); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
         </div>
-
         <div className="applybox2">
           <p>2팀</p>
           <h2>0/4</h2>
@@ -51,7 +52,7 @@ function Home() {
       <div className="rulebox">
         <h2>이용규정</h2>
         <div className="rulebox2">
-          ??
+          알잘딱깔센
         </div>
       </div>
     </div>

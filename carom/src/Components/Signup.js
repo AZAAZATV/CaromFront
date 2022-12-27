@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './Signup.scss';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 
 function Signup() {
   const [a, setA] = useState(-1);
@@ -11,7 +10,22 @@ function Signup() {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState();
-  const post = async () => {
+  const [checked, setChecked] = useState(false);
+  const signup = () => {
+    try {
+      axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`, {}, { withCredentials: true })
+        .then(() => alert("회원가입이 완료 되었습니다."))
+        .then(() => document.location.href = '/login');
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  const checkId = () => {
+    try {
+
+    } catch (e) {
+      console.log(e);
+    }
   }
   return <div className="sign-up">
     <form className="sign-box" onSubmit={(e) => { e.preventDefault() }}>
@@ -38,21 +52,24 @@ function Signup() {
             if (E.test(e.target.value)) {
               e.target.value = e.target.value.replace(E, '');
             }
+            setChecked(false);
             setId(e.target.value);
           }} placeholder='10자 이내 영문입력' />
-          <button>중복확인</button>
+          <button onClick={() => {
+
+          }}>중복확인</button>
         </div>
       </div>
 
       <div className="password">
         <p>비밀번호</p>
-        <input type='text' maxLength={10} onChange={(e) => {
+        <input type='text' maxLength={9} onChange={(e) => {
           const E = /[^0-9]/g;
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
           setPassword(e.target.value);
-        }} value={password} placeholder='10자 이내 숫자 입력' />
+        }} value={password} placeholder='9자 이내 숫자 입력' />
       </div>
 
       <div className="classnum">
@@ -98,9 +115,8 @@ function Signup() {
         </div>
         <div className="sign-btn">
           <button onClick={() => {
-            if (a !== -1 && b !== -1 && c !== -1) {
-              alert(id + name + password + a + '-' + b + '-' + c);
-              document.location.href = `http://10.82.18.67:8080/api/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`;
+            if (!checked && id && name && password && a !== -1 && b !== -1 && c !== -1) {
+              signup();
             } else {
               alert("값을 정확하게 입력해 주십시오.");
             }
