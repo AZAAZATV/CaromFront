@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Navigation.scss';
 
 function Navigation() {
+  const [id, setId] = useState();
+  useEffect(() => {
+
+  }, []);
   return <nav className="Navigation">
     <Link to='/home'>
       <h1>Carom</h1>
@@ -26,14 +30,16 @@ function Navigation() {
       </li>
     </ul>
 
-    <div className="log-in">
+    {!id ? <div className="log-in">
       <Link to='/login'>
         <button>로그인</button>
       </Link>
       <Link to='/signup'>
         <button>회원가입</button>
       </Link>
-    </div>
+    </div> : <div>
+      asdf
+    </div>}
   </nav>;
 }
 

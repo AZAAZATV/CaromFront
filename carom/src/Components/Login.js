@@ -2,7 +2,6 @@ import React from "react";
 import './Login.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import mysql from 'mysql';
 
 function Login() {
   return <div className="Login">
@@ -31,15 +30,7 @@ function Login() {
       </div>
       <div className="log-btn">
         <button className="btn" onClick={() => {
-          const conn = mysql.createConnection({
-            host: '10.82.18.67',
-            user: 'root',
-            password: '23456789',
-            port: '8080',
-            database: 'azaaztv'
-          });
-          conn.connect();
-          axios.get(`http://10.82.18.67:8080/signup/`, (res) => console.log(res));
+
         }}>로그인</button>
       </div>
       <div className="make">
