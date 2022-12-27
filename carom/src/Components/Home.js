@@ -41,12 +41,12 @@ function Home() {
         <div className="applybox1">
           <p>1팀</p>
           <h2>0/4</h2>
-          {!can1 ? (!sub1 ? <button onClick={() => { setSub1(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan1(true); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
+          {!can1 && !sub2 ? (!sub1 ? <button onClick={() => { setSub1(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan1(true); setSub1(false); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
         </div>
         <div className="applybox2">
           <p>2팀</p>
           <h2>0/4</h2>
-          {!can2 ? (!sub2 ? <button onClick={() => { setSub2(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan2(true); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
+          {!can2 && !sub1 ? (!sub2 ? <button onClick={() => { setSub2(true); alert('신청됨') }}>신청하기</button> : <button onClick={() => { setCan2(true); setSub2(false); alert('신청취소됨') }}>신청취소</button>) : <button>신청 불가</button>}
         </div>
       </div>
       <div className="rulebox">
