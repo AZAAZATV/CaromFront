@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import './Navigation.scss';
 
 function Navigation() {
-  const [id, setId] = useState();
+  const [id, setId] = useState('asdf');
+  const [name, setName] = useState('asdf');
   useEffect(() => {
-
+    // setId(localStorage.getItem('id'));
+    // setId(localStorage.getItem('name'));
   }, []);
   return <nav className="Navigation">
     <Link to='/home'>
@@ -30,15 +32,23 @@ function Navigation() {
       </li>
     </ul>
 
-    {!id ? <div className="log-in">
+    {!id && !name ? <div className="log-in">
       <Link to='/login'>
         <button>로그인</button>
       </Link>
       <Link to='/signup'>
         <button>회원가입</button>
       </Link>
-    </div> : <div>
-      asdf
+    </div> : <div className="logged">
+      <span>ID : {id}</span>&nbsp;
+      <span>이름 : {name}</span>
+      <button onClick={() => {
+        if (window.confirm("로그아웃 하시겠습니까?")) {
+          window.localStorage.clear();
+          setId();
+          setName();
+        }
+      }}>로그아웃</button>
     </div>}
   </nav>;
 }
