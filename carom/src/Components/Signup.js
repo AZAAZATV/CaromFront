@@ -9,23 +9,29 @@ function Signup() {
 
   const [id, setId] = useState('');
   const [name, setName] = useState('');
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState('');
   const [checked, setChecked] = useState(false);
   const signup = async () => {
     try {
-      const data = await (await axios.post(`http://10.82.18.67:1004/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`)).data;
-      if (data.status !== 200) {
-        console.log('asdf');
-        console.log(data.status);
-      }
-      else {
-        alert("회원가입이 완료 되었습니다.");
-        // document.location.href = '/login';
-      }
+      const data = await axios({
+        url: `http://10.82.18.67:8080/signup/insert`,
+        method: 'post',
+        body: JSON.stringify({
+          ID: id,
+          PASSWORD: password,
+          NAME: name,
+          CLASS: `${a}-${b}-${c}`,
+        }),
+        headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
+      });
+      console.log(data);
+      alert("회원가입이 완료 되었습니다.");
+      // document.location.href = '/login';
     } catch (e) {
-      console.log(e.response);
+      console.log(e);
     }
   }
+
   const checkId = () => {
     try {
 
@@ -75,7 +81,7 @@ function Signup() {
             e.target.value = e.target.value.replace(E, '');
           }
           setPassword(e.target.value);
-        }} value={password} placeholder='9자 이내 숫자 입력' />
+        }} placeholder='9자 이내 숫자 입력' />
       </div>
 
       <div className="classnum">
