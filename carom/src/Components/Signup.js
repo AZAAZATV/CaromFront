@@ -16,11 +16,11 @@ function Signup() {
       const data = await axios({
         url: `http://10.82.18.67:8080/signup/insert`,
         method: 'post',
-        body: JSON.stringify({
-          ID: id,
-          PASSWORD: password,
-          NAME: name,
-          CLASS: `${a}-${b}-${c}`,
+        data: JSON.stringify({
+          id: id,
+          password: parseInt(password),
+          name: name,
+          class: `${a}-${b}-${c}`,
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
