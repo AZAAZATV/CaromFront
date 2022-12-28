@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import moment from 'moment';
 import 'moment/locale/ko';
+import { Link } from "react-router-dom";
 
 function Home() {
   const [clock, setClock] = useState();
@@ -38,7 +39,9 @@ function Home() {
       </div>
 
       <div className="apply">
-        <h2>당구신청</h2>
+        <Link to={'/userlist'}>
+          <h2>당구신청</h2>
+        </Link>
         <div className="applybox1">
           <p>1팀</p>
           <h2>0/4</h2>

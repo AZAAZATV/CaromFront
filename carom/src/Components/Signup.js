@@ -11,12 +11,17 @@ function Signup() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState();
   const [checked, setChecked] = useState(false);
-  const signup = () => {
+  const signup = async () => {
     try {
-      const { data } = axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`);
-      alert("회원가입이 완료 되었습니다.");
-      console.log(data);
-      // document.location.href = '/login';
+      const data = await (await axios.post(`http://10.82.18.67:1004/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`)).data;
+      if (data.status !== 200) {
+        console.log('asdf');
+        console.log(data.status);
+      }
+      else {
+        alert("회원가입이 완료 되었습니다.");
+        // document.location.href = '/login';
+      }
     } catch (e) {
       console.log(e.response);
     }
