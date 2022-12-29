@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import './Navigation.scss';
 
 function Navigation() {
-  const [id, setId] = useState('asdf');
-  const [name, setName] = useState('asdf');
+  const [id, setId] = useState();
+  const [name, setName] = useState();
   useEffect(() => {
-    // setId(localStorage.getItem('id'));
-    // setId(localStorage.getItem('name'));
+    setInterval(() => {
+      if (localStorage.getItem('id') && localStorage.getItem('name')) {
+        setId(localStorage.getItem('id'));
+        setName(localStorage.getItem('name'));
+      }
+    }, 1000);
   }, []);
   return <nav className="Navigation">
     <Link to='/home'>
@@ -47,6 +51,7 @@ function Navigation() {
           window.localStorage.clear();
           setId();
           setName();
+          document.location.href = '/login';
         }
       }}>로그아웃</button>
     </div>}

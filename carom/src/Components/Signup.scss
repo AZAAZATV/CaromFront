@@ -58,7 +58,7 @@
 
         input {
           border-color: rgb(183, 178, 178);
-          width: 70%;
+          width: 88%;
           margin-top: -10px;
           border-top: none;
           border-left: none;
@@ -70,6 +70,7 @@
           &:hover {
             background-color: #74e47a;
           }
+
           font-family: 'Katuri';
           margin-left: 55px;
           position: relative;
@@ -116,7 +117,7 @@
 
     .classnum {
       margin: 50px 30px;
-      
+
 
       .class-input {
         margin-top: 60px;
@@ -138,7 +139,7 @@
       margin: 60px;
 
       button {
-   
+
 
         &:hover {
           background-color: #25bb2c;
