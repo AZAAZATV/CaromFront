@@ -44,7 +44,7 @@ function Home() {
           class: String(className),
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
-      })
+      });
     } catch (e) {
       console.log(e);
     }
