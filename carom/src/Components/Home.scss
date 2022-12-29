@@ -52,7 +52,8 @@
       width: 380px;
 
       h2 {
-        font-family: 'IM_Hyemin-Bold';
+        font-weight: normal;
+        font-family: '양진체';
         position: absolute;
         margin-left: 140px;
         margin-top: 30px;
@@ -81,10 +82,20 @@
       margin-top: -37%;
       font-size: 20px;
 
-      h2 {
-        font-family: 'IM_Hyemin-Bold';
-        margin-top: 30px;
-        text-align: center;
+      a {
+        text-decoration-line: none;
+        color: black;
+
+        &:hover {
+          color: rgb(162, 160, 160);
+        }
+
+        h2 {
+          font-weight: normal;
+          font-family: '양진체';
+          margin-top: 30px;
+          text-align: center;
+        }
       }
 
       .applybox1 {
@@ -167,10 +178,12 @@
 
     .rulebox {
       h2 {
-        font-family: 'IM_Hyemin-Bold';
+        font-family: '양진체';
+        font-weight: normal;
         margin-left: 34px;
         margin-top: 30px;
       }
+
       box-shadow: 0px 0px 15px 8px rgb(219, 233, 199);
       position: absolute;
       top: 19.5%;

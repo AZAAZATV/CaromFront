@@ -1,27 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "./Components/Navigation";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import TermsOfUse from "./Components/TermsOfUse";
-import NotFound from "./Components/NotFound";
 import UserList from "./Components/UserList";
 import Login from './Components/Login';
 import Signup from "./Components/Signup";
 import Rule from "./Components/Rule";
 
 function App() {
+  const [logined, setLogined] = useState(false);
+  useEffect(() => {
+    setInterval(() => {
+      if (localStorage.getItem('id') && localStorage.getItem('name')) {
+        setLogined(true);
+      }
+      else {
+        setLogined(false);
+      }
+    }, 10);
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/Terms-of-use" element={<TermsOfUse />} />
-          <Route path="/Rule" element={<Rule />} />
-          <Route path="/UserList" element={<UserList />} />
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>}/>
-          <Route path="*" element={<NotFound />} />
+          <Route path="/home" element={logined ? <Home /> : <Navigate to='/login' replace={true} />} />
+          <Route path="/Terms-of-use" element={logined ? <TermsOfUse /> : <Navigate to='/login' replace={true} />} />
+          <Route path="/Rule" element={logined ? <Rule /> : <Navigate to='/login' replace={true} />} />
+          <Route path="/UserList" element={logined ? <UserList /> : <Navigate to='/login' replace={true} />} />
+          <Route path="/login" element={!logined ? <Login /> : <Navigate to='/home' replace={true} />} />
+          <Route path="/signup" element={!logined ? <Signup /> : <Navigate to='/home' replace={true} />} />
+          <Route path="*" element={logined ? <Navigate to='/home' replace={true} /> : <Navigate to='/login' replace={true} />} />
         </Routes>
       </BrowserRouter>
     </div>

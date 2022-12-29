@@ -9,20 +9,24 @@ function Signup() {
 
   const [id, setId] = useState('');
   const [name, setName] = useState('');
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState('');
   const [checked, setChecked] = useState(false);
-  const signup = () => {
+  const signup = async () => {
     try {
-      axios.get(`http://10.82.18.67:8080/signup/insert?ID=${id}&PASSWORD=${password}&NAME=${name}&CLASS=${a}-${b}-${c}`, {}, { withCredentials: true })
-        .then(() => alert("회원가입이 완료 되었습니다."))
-        .then(() => document.location.href = '/login');
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  const checkId = () => {
-    try {
-
+      const data = await axios({
+        url: `http://10.82.18.67:8080/signup/insert`,
+        method: 'post',
+        data: JSON.stringify({
+          id: id,
+          password: parseInt(password),
+          name: name,
+          class: `${a}-${b}-${c}`,
+        }),
+        headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
+      });
+      alert("회원가입이 완료 되었습니다.");
+      document.location.href = '/login';
+      // console.log(data);
     } catch (e) {
       console.log(e);
     }
@@ -55,9 +59,6 @@ function Signup() {
             setChecked(false);
             setId(e.target.value);
           }} placeholder='10자 이내 영문입력' />
-          <button onClick={() => {
-
-          }}>중복확인</button>
         </div>
       </div>
 
@@ -69,7 +70,7 @@ function Signup() {
             e.target.value = e.target.value.replace(E, '');
           }
           setPassword(e.target.value);
-        }} value={password} placeholder='9자 이내 숫자 입력' />
+        }} placeholder='9자 이내 숫자 입력' />
       </div>
 
       <div className="classnum">
