@@ -13,7 +13,7 @@ function Signup() {
   const [checked, setChecked] = useState(false);
   const signup = async () => {
     try {
-      const data = await axios({
+      await axios({
         url: `http://10.82.18.67:8080/signup/insert`,
         method: 'post',
         data: JSON.stringify({
@@ -52,7 +52,7 @@ function Signup() {
         <p>아이디</p>
         <div>
           <input type='text' maxLength={10} onChange={(e) => {
-            const E = /[^a-zA-Z]/g;
+            const E = /[^1-9a-zA-Z]/g;
             if (E.test(e.target.value)) {
               e.target.value = e.target.value.replace(E, '');
             }
