@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './Login.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Login() {
+  const [id, setId] = useState();
+  const [password, setPassword] = useState();
+  const tryLogin = async () => {
+    // localStorage.setItem('id', "asdf");
+    // localStorage.setItem('name', "asdf");
+    // alert('로그인이 완료됐습니다.');
+    try {
+      const data = await axios({
+        url: `http://10.82.17.213:8080/signup/login`,
+        method: 'post',
+        data: JSON.stringify({
+          id: String(id),
+          password: parseInt(password),
+        }),
+        headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
+      });
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
   return <div className="Login">
     <div className="box">
       <div className="maintitle">
@@ -16,6 +37,7 @@ function Login() {
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
+          setId(e.target.value);
         }} />
         <img className="phoneImage" src="image/login.png" alt="login" />
       </div>
@@ -25,12 +47,13 @@ function Login() {
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
+          setPassword(e.target.value);
         }} />
         <img className="phoneImage2" src="image/secrit.png" alt="secret" />
       </div>
       <div className="log-btn">
         <button className="btn" onClick={() => {
-          // axios.post(`http://10.82.18.67:8080/`)
+          tryLogin();
         }}>로그인</button>
       </div>
       <div className="make">

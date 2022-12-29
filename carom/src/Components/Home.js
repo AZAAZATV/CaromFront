@@ -16,13 +16,13 @@ function Home() {
   useEffect(() => {
     const id = setInterval(() => {
       setClock(moment().format('hh:mm:ss'));
-    }, 1);
+    }, 100);
     return (() => clearInterval(id));
   }, []);
   useEffect(() => {//유저 정보 가지고 올거임.
     if (localStorage.length > 1) {
-      setRegiA(localStorage.getItem('regiA'));
-      setRegiB(localStorage.getItem('regiB'));
+      // setRegiA(localStorage.getItem('regiA'));
+      // setRegiB(localStorage.getItem('regiB'));
       setSub1(localStorage.getItem('regiA') > 0 ? true : false);
       setSub2(localStorage.getItem('regiB') > 0 ? true : false);
     }

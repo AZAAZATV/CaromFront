@@ -24,17 +24,9 @@ function Signup() {
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
-      console.log(data);
       alert("회원가입이 완료 되었습니다.");
-      // document.location.href = '/login';
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  const checkId = () => {
-    try {
-
+      document.location.href = '/login';
+      // console.log(data);
     } catch (e) {
       console.log(e);
     }
@@ -67,9 +59,6 @@ function Signup() {
             setChecked(false);
             setId(e.target.value);
           }} placeholder='10자 이내 영문입력' />
-          <button onClick={() => {
-
-          }}>중복확인</button>
         </div>
       </div>
 
