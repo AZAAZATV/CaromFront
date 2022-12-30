@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [clock, setClock] = useState();
-  const [name, setName] = useState('김강현');
-  const [className, setClassName] = useState('1-2-2');
+  const [name, setName] = useState();
+  const [className, setClassName] = useState();
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [sub1, setSub1] = useState(false);
@@ -54,10 +54,16 @@ function Home() {
       const data1 = await axios({
         url: `http://10.82.18.67:8080/apply/applyinfolist`,
         method: 'get'
+      });
+      const data2 = await axios({
+        url: `http://10.82.18.67:8080/apply/applyinfolist2`,
+        method: 'get',
       })
-      console.log(data1.data);
+      console.log(data1.data, data2.data);
       setData1(data1.data);
+      setData2(data2.data);
       setRegiA(data1.data.length);
+      setRegiB(data2.data.length);
     } catch (e) {
       console.log(e);
     }
@@ -66,19 +72,19 @@ function Home() {
   useEffect(() => {
     const id = setInterval(() => {
       setClock(moment().format('hh:mm:ss'));
-    }, 100);
+      setting();
+    }, 500);
     return (() => clearInterval(id));
   }, []);
   useEffect(() => {//유저 정보 가지고 올거임.
     if (localStorage.length > 1) {
-      setRegiA(localStorage.getItem('regiA') ? localStorage.getItem('regiA') : 0); //1번째 당구 신청 페이지 불러옴
-      setRegiB(localStorage.getItem('regiB') ? localStorage.getItem('regiB') : 0);
+      setName(localStorage.getItem('name'));
+      setClassName(localStorage.getItem('class'));
       setSub1(localStorage.getItem('sub1') === 1);
       setSub2(localStorage.getItem('sub2') === 1);
       // setCan1(localStorage.getItem('can1'));
       // setCan2(localStorage.getItem('can2'));
     }
-    setting();
   }, []);
   return <div className="Home">
     <div className="main">
@@ -102,7 +108,7 @@ function Home() {
         <div className="applybox1">
           <p>1팀</p>
           <h2>{regiA}/4</h2>
-          {!can1 && !sub2 ? (!sub1 && data1.length < 4 ? <button onClick={() => {
+          {!can1 && !sub2 ? (!sub1 && regiA < 4 ? <button onClick={() => {
             setSub1(true); post1(); setting();
             setRegiA(() => data1.length);
             localStorage.setItem('regiA', data1.length);
@@ -122,7 +128,7 @@ function Home() {
         <div className="applybox2">
           <p>2팀</p>
           <h2>{regiB}/4</h2>
-          {!can2 && !sub1 ? (!sub2 ? <button onClick={() => {
+          {!can2 && !sub1 ? (!sub2 && regiB < 4 ? <button onClick={() => {
             setSub2(true); post2(); setting();
             setRegiB(() => data2.length);
             localStorage.setItem('regiB', data2.length);

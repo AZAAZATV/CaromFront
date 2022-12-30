@@ -11,8 +11,13 @@ function UserList(props) {
         url: `http://10.82.18.67:8080/apply/applyinfolist`,
         method: 'get'
       })
-      console.log(data1.data);
+      const data2 = await axios({
+        url: 'http://10.82.18.67:8080/apply/applyinfolist2',
+        method: 'get',
+      });
+      console.log(data1.data, data2.data);
       setData1(data1.data);
+      setData2(data2.data);
     } catch (e) {
       console.log(e);
     }
@@ -25,18 +30,27 @@ function UserList(props) {
       <div className="list">
         <span>1</span>
         <div className="users">
-          {data1.map((i, n) =>
-            <div className="user" key={n}>
-              <span>{i.name}</span>
-              <span>{i.class}</span>
-            </div>
-          )}
+          {data1.map((i, n) => {
+            if (n < 4) {
+              return <div className="user" key={n}>
+                <span>{i.name} </span>
+                <span>{i.class}</span>
+              </div>;
+            }
+          })}
         </div>
       </div>
       <div className="list">
         <span>2</span>
         <div className="users">
-          <div className='user'></div>
+          {data2.map((i, n) => {
+            if (n < 4) {
+              return <div className="user" key={n}>
+                <span>{i.name} </span>
+                <span>{i.class}</span>
+              </div>;
+            }
+          })}
         </div>
       </div>
     </div>
