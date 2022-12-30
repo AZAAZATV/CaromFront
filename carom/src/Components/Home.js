@@ -19,6 +19,36 @@ function Home() {
 
   const [regiA, setRegiA] = useState(0);
   const [regiB, setRegiB] = useState(0);
+  const del1 = async () => {
+    try {
+      await axios({
+        url: 'http://10.82.17.213:8080/apply/applydelete',
+        method: 'delete',
+        data: JSON.stringify({
+          name: String(name),
+          className: String(className),
+        }),
+        headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  const del2 = async () => {
+    try {
+      await axios({
+        url: 'http://10.82.17.213:8080/apply/applydelete2',
+        method: 'delete',
+        data: JSON.stringify({
+          name: String(name),
+          className: String(className),
+        }),
+        headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
   const post1 = async () => {
     try {
       await axios({
@@ -59,7 +89,7 @@ function Home() {
         url: `http://10.82.18.67:8080/apply/applyinfolist2`,
         method: 'get',
       })
-      console.log(data1.data, data2.data);
+      // console.log(data1.data, data2.data);
       setData1(data1.data);
       setData2(data2.data);
       setRegiA(data1.data.length);
@@ -110,7 +140,7 @@ function Home() {
         <div className="applybox1">
           <p>1팀</p>
           <h2>{regiA}/4</h2>
-          {!can1 && !sub2 ? (!sub1 && regiA < 4 ? <button onClick={() => {
+          {!can1 && (clock > '11: 33:00') && !sub2 ? (!sub1 && regiA < 4 ? <button onClick={() => {
             setSub1(true); post1(); setting();
             setRegiA(() => data1.length);
             localStorage.setItem('regiA', data1.length);
@@ -118,7 +148,7 @@ function Home() {
             alert('신청됨');
           }}>신청하기</button>
             : <button onClick={() => {
-              setCan1(true); setting();
+              setCan1(true); del1(); setting();
               setRegiA(() => data1.length);
               localStorage.setItem('regiA', data1.length);
               localStorage.setItem('sub1', false);
@@ -138,7 +168,7 @@ function Home() {
             alert('신청됨');
           }}>신청하기</button>
             : <button onClick={() => {
-              setCan2(true); setting();
+              setCan2(true); del2(); setting();
               setRegiB(() => data2.length);
               localStorage.setItem('regiB', data2.length);
               localStorage.setItem('sub2', false);

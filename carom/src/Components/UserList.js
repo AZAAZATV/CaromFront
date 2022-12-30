@@ -37,6 +37,9 @@ function UserList(props) {
                 <span>{i.class}</span>
               </div>;
             }
+            else {
+              return '';
+            }
           })}
         </div>
       </div>
@@ -49,6 +52,9 @@ function UserList(props) {
                 <span>{i.name} </span>
                 <span>{i.class}</span>
               </div>;
+            }
+            else {
+              return '';
             }
           })}
         </div>
