@@ -3,13 +3,10 @@ import './Login.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Login(props) {
   const [id, setId] = useState();
   const [password, setPassword] = useState();
   const tryLogin = async () => {
-    // localStorage.setItem('id', "asdf");
-    // localStorage.setItem('name', "asdf");
-    // alert('로그인이 완료됐습니다.');
     try {
       const data = await axios({
         url: `http://10.82.17.213:8080/signup/login`,
@@ -17,10 +14,23 @@ function Login() {
         data: JSON.stringify({
           id: String(id),
           password: parseInt(password),
+
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
-      console.log(data);
+      if (data.data !== 'login') {
+        // console.log(data.data);
+        localStorage.setItem('id', id);
+        localStorage.setItem('name', data.data.name);
+        localStorage.setItem('class', data.data.class);
+        props.setName(localStorage.getItem('name'));
+        props.setClassInfo(localStorage.getItem('class'));
+        // props.setLogined(true);
+        alert("로그인 완료");
+      }
+      else {
+        alert('잘못된 입력');
+      }
     } catch (e) {
       console.log(e);
     }
@@ -33,7 +43,7 @@ function Login() {
       <div className="title">로그인을 해주세요!</div>
       <div className="log-in">
         <input placeholder="아이디" type='text' maxLength={10} onChange={(e) => {
-          const E = /[^a-zA-Z]/g;
+          const E = /[^1-9a-zA-Z]/g;
           if (E.test(e.target.value)) {
             e.target.value = e.target.value.replace(E, '');
           }
@@ -56,6 +66,7 @@ function Login() {
           tryLogin();
         }}>로그인</button>
       </div>
+
       <div className="make">
         <div className="nosign">아직계정이 없으신가요?</div>
         <Link to='/signup'>
