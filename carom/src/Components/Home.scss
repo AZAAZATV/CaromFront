@@ -22,52 +22,54 @@
 
 
   .main {
-    .clockbox {
-      box-shadow: 0px 0px 15px 8px rgb(219, 233, 199);
-      background-color: rgb(183, 219, 136);
-      border-radius: 10px;
-      margin-top: 10%;
-      height: 80px;
-      width: 300px;
-      margin-left: 95px;
+    .leftBox {
+      position: absolute;
+      top: 19.5%;
+      left: 100px;
 
-      .clock {
-        font-family: 'GmarketSansMedium';
-        position: absolute;
-        margin-top: 18px;
-        margin-left: 74px;
-        font-size: 36px;
-      }
-    }
-
-    .alert {
-      box-shadow: 0px 0px 15px 8px rgb(219, 233, 199);
-      background-color: rgb(246, 253, 190);
-      margin-left: 56px;
-      border: none;
-      border-radius: 10px;
-
-      margin-top: 2%;
-      height: 450px;
-      width: 380px;
-
-      h2 {
-        font-weight: normal;
-        font-family: '양진체';
-        position: absolute;
-        margin-left: 140px;
-        margin-top: 30px;
-      }
-
-      .alertbox {
-        background-color: rgb(234, 246, 156);
-        text-align: center;
-        margin-left: 48px;
-        margin-top: 80px;
-        position: absolute;
+      .clockbox {
+        box-shadow: 0px 0px 15px 8px rgb(219, 233, 199);
+        background-color: rgb(183, 219, 136);
         border-radius: 10px;
-        height: 350px;
-        width: 280px;
+        height: 80px;
+        width: 300px;
+        text-align: center;
+
+        .clock {
+          font-family: 'GmarketSansMedium';
+          padding: 17px 0;
+          font-size: 36px;
+        }
+      }
+
+      .alert {
+        box-shadow: 0px 0px 15px 8px rgb(219, 233, 199);
+        background-color: rgb(246, 253, 190);
+        margin-left: -40px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 5%;
+        height: 460px;
+        width: 380px;
+
+        h2 {
+          font-weight: normal;
+          font-family: '양진체';
+          position: absolute;
+          margin-left: 140px;
+          margin-top: 30px;
+        }
+
+        .alertbox {
+          background-color: rgb(234, 246, 156);
+          text-align: center;
+          margin-left: 48px;
+          margin-top: 80px;
+          position: absolute;
+          border-radius: 10px;
+          height: 350px;
+          width: 280px;
+        }
       }
     }
 
@@ -79,7 +81,7 @@
       margin-left: 36%;
       height: 563px;
       width: 400px;
-      margin-top: -37%;
+      top: 19.5%;
       font-size: 20px;
 
       a {

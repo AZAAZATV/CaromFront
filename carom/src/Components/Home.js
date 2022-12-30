@@ -88,16 +88,18 @@ function Home() {
   }, []);
   return <div className="Home">
     <div className="main">
-      <div className="clockbox">
-        <div className="clock">
-          {clock}
+      <div className="leftBox">
+        <div className="clockbox">
+          <div className="clock">
+            {clock}
+          </div>
         </div>
-      </div>
-      <div className="alert">
-        <h2>공지사항</h2>
-        <div className="alertbox">
-          테스트 기간입니다. <br></br>
-          잘 만들어 봅시다.
+        <div className="alert">
+          <h2>공지사항</h2>
+          <div className="alertbox">
+            테스트 기간입니다. <br />
+            잘 만들어 봅시다.
+          </div>
         </div>
       </div>
 
@@ -116,7 +118,7 @@ function Home() {
             alert('신청됨');
           }}>신청하기</button>
             : <button onClick={() => {
-              setCan1(true); post1(); setting();
+              setCan1(true); setting();
               setRegiA(() => data1.length);
               localStorage.setItem('regiA', data1.length);
               localStorage.setItem('sub1', false);
@@ -136,7 +138,7 @@ function Home() {
             alert('신청됨');
           }}>신청하기</button>
             : <button onClick={() => {
-              setCan2(true); post2(); setting();
+              setCan2(true); setting();
               setRegiB(() => data2.length);
               localStorage.setItem('regiB', data2.length);
               localStorage.setItem('sub2', false);

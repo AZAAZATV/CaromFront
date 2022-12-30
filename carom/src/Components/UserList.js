@@ -15,7 +15,7 @@ function UserList(props) {
         url: 'http://10.82.18.67:8080/apply/applyinfolist2',
         method: 'get',
       });
-      console.log(data1.data, data2.data);
+      // console.log(data1.data, data2.data);
       setData1(data1.data);
       setData2(data2.data);
     } catch (e) {
