@@ -12,24 +12,25 @@ function App() {
   const [logined, setLogined] = useState(false);
   useEffect(() => {
     setInterval(() => {
-      if (localStorage.getItem('id') && localStorage.getItem('name')) {
+      if (localStorage.getItem('id') &&
+        localStorage.getItem('name') && localStorage.getItem('class')) {
         setLogined(true);
       }
       else {
         setLogined(false);
       }
-    }, 10);
+    }, 1);
   }, []);
   return (
     <div className="App">
       <BrowserRouter>
-        <Navigation />
+        <Navigation name={localStorage.getItem('name')} class={localStorage.getItem('class')} />
         <Routes>
           <Route path="/home" element={logined ? <Home /> : <Navigate to='/login' replace={true} />} />
           <Route path="/Terms-of-use" element={logined ? <TermsOfUse /> : <Navigate to='/login' replace={true} />} />
           <Route path="/Rule" element={logined ? <Rule /> : <Navigate to='/login' replace={true} />} />
           <Route path="/UserList" element={logined ? <UserList /> : <Navigate to='/login' replace={true} />} />
-          <Route path="/login" element={!logined ? <Login /> : <Navigate to='/home' replace={true} />} />
+          <Route path="/login" element={!logined ? <Login setLogined={setLogined} /> : <Navigate to='/home' replace={true} />} />
           <Route path="/signup" element={!logined ? <Signup /> : <Navigate to='/home' replace={true} />} />
           <Route path="*" element={logined ? <Navigate to='/home' replace={true} /> : <Navigate to='/login' replace={true} />} />
         </Routes>
