@@ -8,11 +8,11 @@ function UserList(props) {
   const asdf = async () => {
     try {
       const data1 = await axios({
-        url: `http://10.82.18.67:8080/apply/applyinfolist`,
+        url: `http://${props.url}:8080/apply/applyinfolist`,
         method: 'get'
       })
       const data2 = await axios({
-        url: 'http://10.82.18.67:8080/apply/applyinfolist2',
+        url: `http://${props.url}:8080/apply/applyinfolist2`,
         method: 'get',
       });
       // console.log(data1.data, data2.data);
@@ -24,6 +24,7 @@ function UserList(props) {
   }
   useEffect(() => {
     asdf();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <div className="userlist">
     <div className="lists">
@@ -37,6 +38,9 @@ function UserList(props) {
                 <span>{i.class}</span>
               </div>;
             }
+            else {
+              return '';
+            }
           })}
         </div>
       </div>
@@ -49,6 +53,9 @@ function UserList(props) {
                 <span>{i.name} </span>
                 <span>{i.class}</span>
               </div>;
+            }
+            else {
+              return '';
             }
           })}
         </div>
