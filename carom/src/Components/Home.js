@@ -6,6 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const [url, setUrl] = useState('192.168.0.18');
   const [clock, setClock] = useState();
   const [name, setName] = useState();
   const [className, setClassName] = useState();
@@ -52,7 +53,7 @@ function Home() {
   const post1 = async () => {
     try {
       await axios({
-        url: `http://10.82.18.67:8080/apply/applyinfo1`,
+        url: `http://${url}:8080/apply/applyinfo1`,
         method: 'post',
         data: JSON.stringify({
           name: String(name),
@@ -67,7 +68,7 @@ function Home() {
   const post2 = async () => {
     try {
       await axios({
-        url: `http://10.82.18.67:8080/apply/applyinfo2`,
+        url: `http://${url}:8080/apply/applyinfo2`,
         method: 'post',
         data: JSON.stringify({
           name: String(name),
@@ -82,14 +83,13 @@ function Home() {
   const setting = async () => {
     try {
       const data1 = await axios({
-        url: `http://10.82.18.67:8080/apply/applyinfolist`,
+        url: `http://${url}:8080/apply/applyinfolist`,
         method: 'get'
       });
       const data2 = await axios({
-        url: `http://10.82.18.67:8080/apply/applyinfolist2`,
+        url: `http://${url}:8080/apply/applyinfolist2`,
         method: 'get',
       })
-      // console.log(data1.data, data2.data);
       setData1(data1.data);
       setData2(data2.data);
       setRegiA(data1.data.length);
@@ -106,14 +106,14 @@ function Home() {
     }, 500);
     return (() => clearInterval(id));
   }, []);
-  useEffect(() => {//유저 정보 가지고 올거임.
+  useEffect(() => {//로컬에서 유저 정보 가지고 올거임.
     if (localStorage.length > 1) {
       setName(localStorage.getItem('name'));
       setClassName(localStorage.getItem('class'));
       setSub1(localStorage.getItem('sub1') === 1);
       setSub2(localStorage.getItem('sub2') === 1);
-      // setCan1(localStorage.getItem('can1'));
-      // setCan2(localStorage.getItem('can2'));
+      setCan1(localStorage.getItem('can1'));
+      setCan2(localStorage.getItem('can2'));
     }
   }, []);
   return <div className="Home">
@@ -140,7 +140,7 @@ function Home() {
         <div className="applybox1">
           <p>1팀</p>
           <h2>{regiA}/4</h2>
-          {!can1 && (clock > '11: 33:00') && !sub2 ? (!sub1 && regiA < 4 ? <button onClick={() => {
+          {!can1 && (clock > '01: 33:00') && !sub2 ? (!sub1 && regiA < 4 ? <button onClick={() => {
             setSub1(true); post1(); setting();
             setRegiA(() => data1.length);
             localStorage.setItem('regiA', data1.length);
@@ -181,7 +181,7 @@ function Home() {
       <div className="rulebox">
         <h2>이용규정</h2>
         <div className="rulebox2">
-          알잘딱깔센
+          새해 복 많이 받으세요!!
         </div>
       </div>
     </div>
