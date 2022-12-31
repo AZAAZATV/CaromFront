@@ -3,17 +3,16 @@ import './UserList.scss';
 import axios from "axios";
 
 function UserList(props) {
-  const url = '192.168.0.18';
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const asdf = async () => {
     try {
       const data1 = await axios({
-        url: `http://${url}:8080/apply/applyinfolist`,
+        url: `http://${props.url}:8080/apply/applyinfolist`,
         method: 'get'
       })
       const data2 = await axios({
-        url: `http://${url}:8080/apply/applyinfolist2`,
+        url: `http://${props.url}:8080/apply/applyinfolist2`,
         method: 'get',
       });
       // console.log(data1.data, data2.data);
@@ -25,6 +24,7 @@ function UserList(props) {
   }
   useEffect(() => {
     asdf();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <div className="userlist">
     <div className="lists">

@@ -5,8 +5,7 @@ import 'moment/locale/ko';
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Home() {
-  const ipAddress = '192.168.0.18';
+function Home(props) {
   const [clock, setClock] = useState();
   const [name, setName] = useState();
   const [className, setClassName] = useState();
@@ -53,7 +52,7 @@ function Home() {
   const post1 = async () => {
     try {
       await axios({
-        url: `http://${ipAddress}:8080/apply/applyinfo1`,
+        url: `http://${props.url}:8080/apply/applyinfo1`,
         method: 'post',
         data: JSON.stringify({
           name: String(name),
@@ -68,7 +67,7 @@ function Home() {
   const post2 = async () => {
     try {
       await axios({
-        url: `http://${ipAddress}:8080/apply/applyinfo2`,
+        url: `http://${props.url}:8080/apply/applyinfo2`,
         method: 'post',
         data: JSON.stringify({
           name: String(name),
@@ -83,11 +82,11 @@ function Home() {
   const setting = async () => {
     try {
       const data1 = await axios({
-        url: `http://${ipAddress}:8080/apply/applyinfolist`,
+        url: `http://${props.url}:8080/apply/applyinfolist`,
         method: 'get'
       });
       const data2 = await axios({
-        url: `http://${ipAddress}:8080/apply/applyinfolist2`,
+        url: `http://${props.url}:8080/apply/applyinfolist2`,
         method: 'get',
       })
       setData1(data1.data);
@@ -107,6 +106,7 @@ function Home() {
       setting();
     }, 500);
     return (() => clearInterval(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {//로컬에서 유저 정보 가지고 올거임.
     if (localStorage.getItem('sub1') === null) { localStorage.setItem('sub1', false) };
