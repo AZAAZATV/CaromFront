@@ -30,6 +30,12 @@ function Home(props) {
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
+      setCan1(true);
+      setRegiA(() => data1.length);
+      localStorage.setItem('regiA', data1.length);
+      localStorage.setItem('sub1', false);
+      localStorage.setItem('can1', true);
+      setSub1(false); alert('신청취소됨');
     } catch (e) {
       console.log(e);
     }
@@ -45,6 +51,12 @@ function Home(props) {
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
+      setCan2(true);
+      setRegiB(() => data2.length);
+      localStorage.setItem('regiB', data2.length);
+      localStorage.setItem('sub2', false);
+      localStorage.setItem('can2', true);
+      setSub2(false); alert('신청취소됨');
     } catch (e) {
       console.log(e);
     }
@@ -60,6 +72,11 @@ function Home(props) {
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
+      setSub1(true);
+      setRegiA(() => data1.length);
+      localStorage.setItem('regiA', data1.length);
+      localStorage.setItem('sub1', true);
+      alert('신청됨');
     } catch (e) {
       console.log(e);
     }
@@ -75,6 +92,11 @@ function Home(props) {
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
+      setSub2(true);
+      setRegiB(() => data2.length);
+      localStorage.setItem('regiB', data2.length);
+      localStorage.setItem('sub2', true);
+      alert('신청됨');
     } catch (e) {
       console.log(e);
     }
@@ -144,41 +166,17 @@ function Home(props) {
         <div className="applybox1">
           <p>1팀</p>
           <h2>{regiA}/4</h2>
-          {!can1 && !sub2 ? (!sub1 && regiA < 4 ? <button onClick={() => {
-            setSub1(true); post1();
-            setRegiA(() => data1.length);
-            localStorage.setItem('regiA', data1.length);
-            localStorage.setItem('sub1', true);
-            alert('신청됨');
-          }}>신청하기</button>
-            : <button onClick={() => {
-              setCan1(true); del1();
-              setRegiA(() => data1.length);
-              localStorage.setItem('regiA', data1.length);
-              localStorage.setItem('sub1', false);
-              localStorage.setItem('can1', true);
-              setSub1(false); alert('신청취소됨');
-            }}>신청취소</button>)
+          {!can1 && !sub2 ? (!sub1 && regiA < 4 ?
+            <button onClick={() => post1()}>신청하기</button>
+            : <button onClick={() => del1()}>신청취소</button>)
             : <button>신청 불가</button>}
         </div>
         <div className="applybox2">
           <p>2팀</p>
           <h2>{regiB}/4</h2>
-          {!can2 && !sub1 ? (!sub2 && regiB < 4 ? <button onClick={() => {
-            setSub2(true); post2();
-            setRegiB(() => data2.length);
-            localStorage.setItem('regiB', data2.length);
-            localStorage.setItem('sub2', true);
-            alert('신청됨');
-          }}>신청하기</button>
-            : <button onClick={() => {
-              setCan2(true); del2();
-              setRegiB(() => data2.length);
-              localStorage.setItem('regiB', data2.length);
-              localStorage.setItem('sub2', false);
-              localStorage.setItem('can2', true);
-              setSub2(false); alert('신청취소됨');
-            }}>신청취소</button>)
+          {!can2 && !sub1 ? (!sub2 && regiB < 4 ?
+            <button onClick={() => post2()}>신청하기</button>
+            : <button onClick={() => del2()}>신청취소</button>)
             : <button>신청 불가</button>}
         </div>
       </div>
