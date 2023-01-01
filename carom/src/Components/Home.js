@@ -153,8 +153,7 @@ function Home(props) {
         <div className="alert">
           <h2>공지사항</h2>
           <div className="alertbox">
-            테스트 기간입니다. <br />
-            잘 만들어 봅시다.
+            새해 복 많이 받으세요!!
           </div>
         </div>
       </div>
@@ -183,7 +182,8 @@ function Home(props) {
       <div className="rulebox">
         <h2>이용규정</h2>
         <div className="rulebox2">
-          새해 복 많이 받으세요!!
+          테스트 기간입니다. <br />
+          잘 만들어 봅시다.
         </div>
       </div>
     </div>
