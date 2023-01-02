@@ -9,23 +9,20 @@ function Login(props) {
   const tryLogin = async () => {
     try {
       const data = await axios({
-        url: `http://10.82.17.213:8080/signup/login`,
+        url: `http://${props.url}:8080/signup/login`,
         method: 'post',
         data: JSON.stringify({
           id: String(id),
           password: parseInt(password),
-
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
       if (data.data !== 'login') {
-        // console.log(data.data);
         localStorage.setItem('id', id);
         localStorage.setItem('name', data.data.name);
         localStorage.setItem('class', data.data.class);
         props.setName(localStorage.getItem('name'));
         props.setClassInfo(localStorage.getItem('class'));
-        // props.setLogined(true);
         alert("로그인 완료");
       }
       else {
