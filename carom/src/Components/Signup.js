@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Signup.scss';
 import axios from 'axios';
 
-function Signup() {
+function Signup(props) {
   const [a, setA] = useState(-1);
   const [b, setB] = useState(-1);
   const [c, setC] = useState(-1);
@@ -14,7 +14,7 @@ function Signup() {
   const signup = async () => {
     try {
       await axios({
-        url: `http://10.82.18.67:8080/signup/insert`,
+        url: `http://${props.url}:1004/signup/insert`,
         method: 'post',
         data: JSON.stringify({
           id: id,

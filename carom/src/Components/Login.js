@@ -9,7 +9,7 @@ function Login(props) {
   const tryLogin = async () => {
     try {
       const data = await axios({
-        url: `http://10.82.17.213:8080/signup/login`,
+        url: `http://${props.url}:8080/signup/login`,
         method: 'post',
         data: JSON.stringify({
           id: String(id),

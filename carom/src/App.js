@@ -10,7 +10,7 @@ import Rule from "./Components/Rule";
 
 function App() {
   const [logined, setLogined] = useState(false);
-  const url = '10.82.18.67';
+  const url = '192.168.165.207';
   useEffect(() => {
     setInterval(() => {
       if (localStorage.getItem('id') &&
@@ -31,8 +31,8 @@ function App() {
           <Route path="/Terms-of-use" element={logined ? <TermsOfUse /> : <Navigate to='/login' replace={true} />} />
           <Route path="/Rule" element={logined ? <Rule /> : <Navigate to='/login' replace={true} />} />
           <Route path="/UserList" element={logined ? <UserList url={url} /> : <Navigate to='/login' replace={true} />} />
-          <Route path="/login" element={!logined ? <Login setLogined={setLogined} /> : <Navigate to='/home' replace={true} />} />
-          <Route path="/signup" element={!logined ? <Signup /> : <Navigate to='/home' replace={true} />} />
+          <Route path="/login" element={!logined ? <Login url={url} setLogined={setLogined} /> : <Navigate to='/home' replace={true} />} />
+          <Route path="/signup" element={!logined ? <Signup url={url} /> : <Navigate to='/home' replace={true} />} />
           <Route path="*" element={logined ? <Navigate to='/home' replace={true} /> : <Navigate to='/login' replace={true} />} />
         </Routes>
       </BrowserRouter>
