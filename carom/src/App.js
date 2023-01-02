@@ -10,7 +10,7 @@ import Rule from "./Components/Rule";
 
 function App() {
   const [logined, setLogined] = useState(false);
-  const url = '10.82.18.67';
+  const url = '192.168.165.207';
   useEffect(() => {
     setInterval(() => {
       if (localStorage.getItem('id') &&
