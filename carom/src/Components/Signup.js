@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Signup.scss';
 import axios from 'axios';
 
-function Signup() {
+function Signup(props) {
   const [a, setA] = useState(-1);
   const [b, setB] = useState(-1);
   const [c, setC] = useState(-1);
@@ -14,19 +14,18 @@ function Signup() {
   const signup = async () => {
     try {
       await axios({
-        url: `http://10.82.18.67:8080/signup/insert`,
+        url: `http://${props.url}:1004/signup/insert`,
         method: 'post',
         data: JSON.stringify({
-          id: id,
+          id: String(id),
           password: parseInt(password),
-          name: name,
-          class: `${a}-${b}-${c}`,
+          name: String(name),
+          class: String(`${a}-${b}-${c}`),
         }),
         headers: { 'Content-Type': `application/json`, 'withCredentials': 'true', 'Access-Control-Allow-Origin': '*' }
       });
       alert("회원가입이 완료 되었습니다.");
       document.location.href = '/login';
-      // console.log(data);
     } catch (e) {
       console.log(e);
     }

@@ -22,7 +22,7 @@ function Home(props) {
   const del1 = async () => {
     try {
       await axios({
-        url: 'http://10.82.17.213:8080/apply/applydelete',
+        url: `http://${props.url}:8080/apply/applydelete`,
         method: 'delete',
         data: JSON.stringify({
           name: String(name),
@@ -43,7 +43,7 @@ function Home(props) {
   const del2 = async () => {
     try {
       await axios({
-        url: 'http://10.82.17.213:8080/apply/applydelete2',
+        url: `http://${props.url}:8080/apply/applydelete2`,
         method: 'delete',
         data: JSON.stringify({
           name: String(name),
