@@ -26,7 +26,7 @@ function Login(props) {
         alert("로그인 완료");
       }
       else {
-        alert('잘못된 입력');
+        alert('아이디 또는 비밀번호를 잘못 입력했습니다.');
       }
     } catch (e) {
       console.log(e);
